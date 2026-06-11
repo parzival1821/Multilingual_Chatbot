@@ -31,6 +31,9 @@
       lpg: "LPG connection?",
       bank: "Bank account?",
       special: "Special category",
+      widow: "Widow",
+      disabled: "Person with disability",
+      girlChildParent: "Parent/guardian of girl child",
       findSchemes: "Find Schemes",
       recommendations: "Recommendations",
       askTitle: "Ask a Follow-Up",
@@ -38,20 +41,46 @@
       ask: "Ask",
       checklistTitle: "Document Checklist",
       chooseScheme: "Choose scheme",
-      copyChecklist: "Copy checklist"
+      copyChecklist: "Copy checklist",
+      areaRural: "Rural",
+      areaUrban: "Urban",
+      farmer: "Farmer",
+      streetVendor: "Street vendor",
+      informalWorker: "Informal worker",
+      constructionWorker: "Construction worker",
+      domesticWorker: "Domestic worker",
+      student: "Student",
+      other: "Other",
+      female: "Female",
+      male: "Male",
+      otherGender: "Other",
+      age18_40: "18-40",
+      age40_59: "40-59",
+      age60_79: "60-79",
+      age80Plus: "80+",
+      incomeBpl: "BPL / very low income",
+      incomeEws: "EWS",
+      incomeLig: "LIG",
+      incomeMig: "MIG",
+      incomeOther: "Other / unknown",
+      yes: "Yes",
+      no: "No"
     },
     hi: {
       profileTitle: "Eligibility Profile",
       area: "Area",
-      occupation: "Occupation",
+      occupation: "Rozgar / kaam",
       gender: "Gender",
-      age: "Age Group",
-      income: "Income Category",
+      age: "Age group",
+      income: "Income category",
       ownsLand: "Kheti ki zameen?",
       pucca: "Pucca ghar?",
       lpg: "LPG connection?",
       bank: "Bank account?",
       special: "Special category",
+      widow: "Vidhwa",
+      disabled: "Divyang vyakti",
+      girlChildParent: "Ladki ke parent/guardian",
       findSchemes: "Schemes dhoondhein",
       recommendations: "Recommendations",
       askTitle: "Follow-up poochhein",
@@ -59,7 +88,30 @@
       ask: "Poochhein",
       checklistTitle: "Document Checklist",
       chooseScheme: "Scheme chunen",
-      copyChecklist: "Checklist copy karein"
+      copyChecklist: "Checklist copy karein",
+      areaRural: "Rural",
+      areaUrban: "Urban",
+      farmer: "Kisan",
+      streetVendor: "Street vendor",
+      informalWorker: "Informal worker",
+      constructionWorker: "Construction worker",
+      domesticWorker: "Domestic worker",
+      student: "Student",
+      other: "Other",
+      female: "Mahila",
+      male: "Purush",
+      otherGender: "Other",
+      age18_40: "18-40",
+      age40_59: "40-59",
+      age60_79: "60-79",
+      age80Plus: "80+",
+      incomeBpl: "BPL / bahut low income",
+      incomeEws: "EWS",
+      incomeLig: "LIG",
+      incomeMig: "MIG",
+      incomeOther: "Other / pata nahi",
+      yes: "Haan",
+      no: "Nahi"
     }
   };
 
@@ -121,6 +173,9 @@
     });
     document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
       node.setAttribute("placeholder", copy[language][node.dataset.i18nPlaceholder] || node.getAttribute("placeholder"));
+    });
+    document.querySelectorAll("[data-i18n-option]").forEach((node) => {
+      node.textContent = copy[language][node.dataset.i18nOption] || node.textContent;
     });
     renderRecommendations();
     renderChecklist();

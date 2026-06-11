@@ -236,7 +236,13 @@
       disclaimer: "Please verify final eligibility on the official portal before applying.",
       verified: "Verified official source",
       recheck: "Official source, recheck latest rules",
-      recheckNote: "This scheme entry uses an official source, but latest eligibility and amount details should be rechecked."
+      recheckNote: "This scheme entry uses an official source, but latest eligibility and amount details should be rechecked.",
+      strongProfile: "This profile is a strong match.",
+      possibleProfile: "This profile may be a match.",
+      limitedProfile: "This profile has limited matching signals.",
+      reasonPrefix: "Reason",
+      documentsPrefix: "Documents to prepare",
+      benefitsPrefix: "Key benefits"
     },
     hi: {
       eligible: "Majboot match",
@@ -247,7 +253,13 @@
       disclaimer: "Apply karne se pehle official portal par final eligibility zaroor verify karein.",
       verified: "Official source verified",
       recheck: "Official source, latest rules recheck karein",
-      recheckNote: "Is scheme ka official source listed hai, lekin latest eligibility aur amount details recheck karni chahiye."
+      recheckNote: "Is scheme ka official source listed hai, lekin latest eligibility aur amount details recheck karni chahiye.",
+      strongProfile: "Yeh profile strong match lagti hai.",
+      possibleProfile: "Yeh profile match ho sakti hai.",
+      limitedProfile: "Is profile mein limited matching signals hain.",
+      reasonPrefix: "Karan",
+      documentsPrefix: "Documents taiyaar rakhein",
+      benefitsPrefix: "Main benefits"
     }
   };
 

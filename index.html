@@ -36,21 +36,21 @@
           <label>
             <span data-i18n="area">Area</span>
             <select name="area">
-              <option value="rural">Rural</option>
-              <option value="urban">Urban</option>
+              <option value="rural" data-i18n-option="areaRural">Rural</option>
+              <option value="urban" data-i18n-option="areaUrban">Urban</option>
             </select>
           </label>
 
           <label>
             <span data-i18n="occupation">Occupation</span>
             <select name="occupation">
-              <option value="farmer">Farmer</option>
-              <option value="street_vendor">Street vendor</option>
-              <option value="informal_worker">Informal worker</option>
-              <option value="construction_worker">Construction worker</option>
-              <option value="domestic_worker">Domestic worker</option>
-              <option value="student">Student</option>
-              <option value="other">Other</option>
+              <option value="farmer" data-i18n-option="farmer">Farmer</option>
+              <option value="street_vendor" data-i18n-option="streetVendor">Street vendor</option>
+              <option value="informal_worker" data-i18n-option="informalWorker">Informal worker</option>
+              <option value="construction_worker" data-i18n-option="constructionWorker">Construction worker</option>
+              <option value="domestic_worker" data-i18n-option="domesticWorker">Domestic worker</option>
+              <option value="student" data-i18n-option="student">Student</option>
+              <option value="other" data-i18n-option="other">Other</option>
             </select>
           </label>
 
@@ -58,19 +58,19 @@
             <label>
               <span data-i18n="gender">Gender</span>
               <select name="gender">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                <option value="other">Other</option>
+                <option value="female" data-i18n-option="female">Female</option>
+                <option value="male" data-i18n-option="male">Male</option>
+                <option value="other" data-i18n-option="otherGender">Other</option>
               </select>
             </label>
 
             <label>
               <span data-i18n="age">Age Group</span>
               <select name="ageGroup">
-                <option value="18_40">18-40</option>
-                <option value="40_59">40-59</option>
-                <option value="60_79">60-79</option>
-                <option value="80_plus">80+</option>
+                <option value="18_40" data-i18n-option="age18_40">18-40</option>
+                <option value="40_59" data-i18n-option="age40_59">40-59</option>
+                <option value="60_79" data-i18n-option="age60_79">60-79</option>
+                <option value="80_plus" data-i18n-option="age80Plus">80+</option>
               </select>
             </label>
           </div>
@@ -78,11 +78,11 @@
           <label>
             <span data-i18n="income">Income Category</span>
             <select name="incomeGroup">
-              <option value="bpl">BPL / very low income</option>
-              <option value="ews">EWS</option>
-              <option value="lig">LIG</option>
-              <option value="mig">MIG</option>
-              <option value="other">Other / unknown</option>
+              <option value="bpl" data-i18n-option="incomeBpl">BPL / very low income</option>
+              <option value="ews" data-i18n-option="incomeEws">EWS</option>
+              <option value="lig" data-i18n-option="incomeLig">LIG</option>
+              <option value="mig" data-i18n-option="incomeMig">MIG</option>
+              <option value="other" data-i18n-option="incomeOther">Other / unknown</option>
             </select>
           </label>
 
@@ -90,16 +90,16 @@
             <label>
               <span data-i18n="ownsLand">Cultivable land?</span>
               <select name="ownsLand">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="yes" data-i18n-option="yes">Yes</option>
+                <option value="no" data-i18n-option="no">No</option>
               </select>
             </label>
 
             <label>
               <span data-i18n="pucca">Pucca house?</span>
               <select name="hasPuccaHouse">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
+                <option value="no" data-i18n-option="no">No</option>
+                <option value="yes" data-i18n-option="yes">Yes</option>
               </select>
             </label>
           </div>
@@ -108,25 +108,25 @@
             <label>
               <span data-i18n="lpg">LPG connection?</span>
               <select name="hasLpg">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
+                <option value="no" data-i18n-option="no">No</option>
+                <option value="yes" data-i18n-option="yes">Yes</option>
               </select>
             </label>
 
             <label>
               <span data-i18n="bank">Bank account?</span>
               <select name="hasBank">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="yes" data-i18n-option="yes">Yes</option>
+                <option value="no" data-i18n-option="no">No</option>
               </select>
             </label>
           </div>
 
           <fieldset>
             <legend data-i18n="special">Special category</legend>
-            <label class="checkbox"><input type="checkbox" name="specialCategories" value="widowed" /> Widow</label>
-            <label class="checkbox"><input type="checkbox" name="specialCategories" value="disabled" /> Person with disability</label>
-            <label class="checkbox"><input type="checkbox" name="specialCategories" value="girl_child_parent" /> Parent/guardian of girl child</label>
+            <label class="checkbox"><input type="checkbox" name="specialCategories" value="widowed" /> <span data-i18n="widow">Widow</span></label>
+            <label class="checkbox"><input type="checkbox" name="specialCategories" value="disabled" /> <span data-i18n="disabled">Person with disability</span></label>
+            <label class="checkbox"><input type="checkbox" name="specialCategories" value="girl_child_parent" /> <span data-i18n="girlChildParent">Parent/guardian of girl child</span></label>
           </fieldset>
 
           <button class="primary" type="submit" data-i18n="findSchemes">Find Schemes</button>

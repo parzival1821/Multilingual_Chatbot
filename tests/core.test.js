@@ -67,10 +67,23 @@ assert.equal(docsAnswer.scheme.id, "pmjay");
 assert.match(docsAnswer.text, /Documents to prepare/);
 assert.ok(docsAnswer.citations[0].startsWith("https://"));
 
+const hindiDocsAnswer = core.answerQuestion("Ayushman ke documents kya chahiye?", farmer, schemes, "hi", labels);
+assert.equal(hindiDocsAnswer.type, "answer");
+assert.equal(hindiDocsAnswer.scheme.id, "pmjay");
+assert.match(hindiDocsAnswer.text, /Documents taiyaar rakhein/);
+assert.match(hindiDocsAnswer.text, /official portal/);
+
 const vendorAnswer = core.answerQuestion("Can I get PM SVANidhi loan as a street vendor?", vendor, schemes, "en", labels);
 assert.equal(vendorAnswer.type, "answer");
 assert.equal(vendorAnswer.scheme.id, "pmsvanidhi");
 assert.match(vendorAnswer.text, /latest eligibility and amount details should be rechecked/);
+
+const parsedProfile = core.createProfileFromEntries([
+  ["area", "urban"],
+  ["occupation", "informal_worker"],
+  ["specialCategories", "girl_child_parent"]
+]);
+assert.deepEqual(parsedProfile.specialCategories, ["girl_child_parent"]);
 
 const unknown = core.answerQuestion("Can I get a drone subsidy for my startup?", farmer, schemes, "en", labels);
 assert.equal(unknown.type, "fallback");

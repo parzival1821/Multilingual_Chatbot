@@ -264,18 +264,18 @@
     if (wantsEligibility(question)) {
       const statusText =
         evaluation.status === "eligible"
-          ? "This profile is a strong match."
+          ? labels.strongProfile || "This profile is a strong match."
           : evaluation.status === "possible"
-            ? "This profile may be a match."
-            : "This profile has limited matching signals.";
+            ? labels.possibleProfile || "This profile may be a match."
+            : labels.limitedProfile || "This profile has limited matching signals.";
       parts.push(statusText);
-      parts.push(`Reason: ${evaluation.reasons.slice(0, 2).join(" ")}`);
+      parts.push(`${labels.reasonPrefix || "Reason"}: ${evaluation.reasons.slice(0, 2).join(" ")}`);
     }
 
     if (wantsDocuments(question)) {
-      parts.push(`Documents to prepare: ${top.documents.join(", ")}.`);
+      parts.push(`${labels.documentsPrefix || "Documents to prepare"}: ${top.documents.join(", ")}.`);
     } else {
-      parts.push(`Key benefits: ${top.benefits.slice(0, 3).join(", ")}.`);
+      parts.push(`${labels.benefitsPrefix || "Key benefits"}: ${top.benefits.slice(0, 3).join(", ")}.`);
     }
 
     if (top.verificationStatus !== "verified") {

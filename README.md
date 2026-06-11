@@ -38,6 +38,12 @@ http://localhost:4173
 npm test
 ```
 
+## Verification
+
+- `npm test` validates the core eligibility, retrieval, fallback, citation, and checklist behavior.
+- Local HTTP smoke checks should return `200 OK` for `/`, `/styles.css`, and `/src/app.js`.
+- The local planning files `details.md`, `plan.md`, and `schemes.md` are intentionally ignored and should not be committed.
+
 ## Progress Log
 
 ### 2026-06-11
@@ -47,6 +53,16 @@ npm test
 - Added scheme knowledge base seed data in code form.
 - Added eligibility, retrieval, answer, and checklist logic.
 - Added initial automated tests.
+- Verified core tests pass locally.
+- Verified the static app and assets are served on the local dev server.
+- Pushed the first implementation checkpoint to `origin/main`.
+
+## Next Build Tasks
+
+- Add stronger Hindi copy for questionnaire options and answer templates.
+- Add richer source/verification badges in the recommendation UI.
+- Add a demo script and screenshots once the visual pass is complete.
+- Add a deployment target if time allows.
 
 ## Project Positioning
 

@@ -54,7 +54,7 @@ assert.ok(farmerIds.includes("pmjay"), "Low-income farmer should also see PM-JAY
 
 const womanIds = ids(core.recommendSchemes(womanHead, schemes));
 assert.ok(womanIds.includes("pmuy"), "Woman without LPG should see Ujjwala");
-assert.ok(womanIds.includes("pmay-u"), "Urban household without pucca house should see PMAY-U");
+assert.ok(womanIds.includes("pmay-u"), "Urban household without permanent house should see PMAY-U");
 assert.ok(womanIds.includes("ssa"), "Parent/guardian of girl child should see Sukanya");
 
 const vendorIds = ids(core.recommendSchemes(vendor, schemes));

@@ -111,6 +111,18 @@ h2 {
   gap: 8px;
 }
 
+.demo-presets {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.demo-presets > span {
+  color: #2d3b48;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .segmented,
 .sample,
 .prompt,

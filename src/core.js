@@ -104,7 +104,7 @@
         }
         if (profile.hasPuccaHouse === "no") {
           score += 3;
-          reasons.push("The household does not already have a pucca house.");
+          reasons.push("The household does not already have a permanent house.");
         }
         if (["ews", "lig", "mig", "bpl"].includes(profile.incomeGroup)) {
           score += 2;

@@ -99,6 +99,7 @@ The repo includes a GitHub Pages workflow at `.github/workflows/pages.yml`. Afte
 - Added downloadable `.txt` checklists for selected schemes.
 - Added a knowledge-base metrics strip for demo-ready trust/scope signals.
 - Added a GitHub Pages deployment workflow.
+- Cleaned up English UX copy, moved demo presets below the questionnaire, and renamed the unclear woman/persona and housing labels.
 
 ## Next Build Tasks
 

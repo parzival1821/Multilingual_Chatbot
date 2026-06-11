@@ -102,10 +102,10 @@
       category: ["housing", "urban"],
       verificationStatus: "verified",
       summary:
-        "Urban housing assistance for eligible EWS, LIG, and MIG families without a pucca house in India.",
+        "Urban housing assistance for eligible EWS, LIG, and MIG families without a permanent house in India.",
       hindiSummary:
         "Shahri EWS/LIG/MIG parivar ko ghar banane, kharidne ya kiraye ke affordable housing support ke liye sahayata mil sakti hai.",
-      targetBeneficiary: "Urban EWS, LIG, and MIG families without a pucca house anywhere in India.",
+      targetBeneficiary: "Urban EWS, LIG, and MIG families without a permanent house anywhere in India.",
       benefits: [
         "Support through Beneficiary Led Construction",
         "Affordable Housing in Partnership",
@@ -115,14 +115,14 @@
       eligibility: [
         "Family should belong to EWS, LIG, or MIG segment.",
         "Family should live in an urban area covered by the scheme.",
-        "Applicant or family member should not own a pucca house anywhere in India.",
+        "Applicant or family member should not own a permanent house anywhere in India.",
         "Family should not have received central/state/local government housing benefit in the last 20 years."
       ],
-      exclusions: ["Already owns a pucca house", "Received housing scheme benefit recently as per scheme rules"],
-      documents: ["Aadhaar or identity proof", "Address proof", "Income proof or declaration", "Family details", "Proof of not owning a pucca house", "Bank account details"],
+      exclusions: ["Already owns a permanent house", "Received housing scheme benefit recently as per scheme rules"],
+      documents: ["Aadhaar or identity proof", "Address proof", "Income proof or declaration", "Family details", "Proof of not owning a permanent house", "Bank account details"],
       applicationPath: ["PMAY-U 2.0 portal", "Urban Local Body", "State/UT nodal agency", "Primary lending institution for interest subsidy"],
       sourceUrls: ["https://pmay-urban.gov.in/", "https://pmaymis.gov.in/PMAYMIS2_2024/PmayDefault.aspx"],
-      tags: ["housing", "urban", "home", "awas", "rent", "ews", "lig", "mig", "pucca house"],
+      tags: ["housing", "urban", "home", "awas", "rent", "ews", "lig", "mig", "permanent house", "pucca house"],
       searchText: "awas ghar house home housing rent pucca makaan urban ews lig mig"
     },
     {

@@ -10,7 +10,6 @@
     <main class="app-shell">
       <section class="topbar" aria-label="Project overview">
         <div>
-          <p class="eyebrow">NSS AI Project</p>
           <h1>Sahayak</h1>
           <p class="subtitle">A bilingual welfare scheme discovery assistant with grounded answers and source-backed recommendations.</p>
           <div id="metrics" class="metric-strip" aria-label="Knowledge base metrics"></div>
@@ -26,12 +25,6 @@
           <div class="section-heading">
             <p class="eyebrow">Step 1</p>
             <h2 data-i18n="profileTitle">Eligibility Profile</h2>
-          </div>
-
-          <div class="sample-row" aria-label="Sample personas">
-            <button type="button" class="sample" data-persona="farmer">Farmer</button>
-            <button type="button" class="sample" data-persona="woman">Woman HoH</button>
-            <button type="button" class="sample" data-persona="vendor">Street Vendor</button>
           </div>
 
           <label>
@@ -97,7 +90,7 @@
             </label>
 
             <label>
-              <span data-i18n="pucca">Pucca house?</span>
+              <span data-i18n="permanentHouse">Permanent house?</span>
               <select name="hasPuccaHouse">
                 <option value="no" data-i18n-option="no">No</option>
                 <option value="yes" data-i18n-option="yes">Yes</option>
@@ -129,6 +122,15 @@
             <label class="checkbox"><input type="checkbox" name="specialCategories" value="disabled" /> <span data-i18n="disabled">Person with disability</span></label>
             <label class="checkbox"><input type="checkbox" name="specialCategories" value="girl_child_parent" /> <span data-i18n="girlChildParent">Parent/guardian of girl child</span></label>
           </fieldset>
+
+          <div class="demo-presets" aria-label="Demo presets">
+            <span data-i18n="demoPresets">Demo presets</span>
+            <div class="sample-row">
+              <button type="button" class="sample" data-persona="farmer" data-i18n="sampleFarmer">Farmer</button>
+              <button type="button" class="sample" data-persona="woman" data-i18n="sampleWoman">Woman-led household</button>
+              <button type="button" class="sample" data-persona="vendor" data-i18n="sampleVendor">Street vendor</button>
+            </div>
+          </div>
 
           <button class="primary" type="submit" data-i18n="findSchemes">Find Schemes</button>
         </form>

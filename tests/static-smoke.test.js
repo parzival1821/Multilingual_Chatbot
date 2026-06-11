@@ -23,6 +23,9 @@ assert.match(indexHtml, /data-language="hi"/, "Home page should expose Hindi mod
 assert.match(indexHtml, /Woman-led household/, "Home page should use clear persona labels");
 assert.match(indexHtml, /Permanent house\?/, "English form should avoid unexplained local terminology");
 assert.doesNotMatch(indexHtml, />Step \d</, "Dashboard should not present as a rough numbered flow");
+assert.match(appJs, /पात्रता प्रोफ़ाइल/, "Hindi mode should use Devanagari UI copy");
+assert.match(appJs, /आयुष्मान भारत के लिए कौन से दस्तावेज चाहिए/, "Hindi prompt examples should use Devanagari");
+assert.doesNotMatch(appJs, /Beneficiary ki|Poochhein|Schemes dhoondhein/, "Hindi copy should not be Hinglish");
 assert.match(appJs, /View documents/, "Recommendation action should clearly describe the document action");
 assert.match(appJs, /scrollIntoView/, "Recommendation action should bring the checklist panel into view");
 assert.doesNotMatch(appJs, /setToolPanel/, "Assistant and checklist panels should not need tab switching");

@@ -65,10 +65,10 @@ The repo includes a GitHub Pages workflow at `.github/workflows/pages.yml`. Afte
 1. Open the app and keep the language in English.
 2. Click the `Farmer` sample persona.
 3. Show that PM-KISAN ranks as a strong match and PM-JAY appears for health coverage.
-4. Click `Use checklist` on PM-KISAN and show the required documents.
+4. Click `View documents` on PM-KISAN and show the required documents.
 5. Copy or download the checklist to show the low-bandwidth handoff.
 6. Ask: `What documents do I need for Ayushman Bharat?`
-7. Switch to Hindi mode and ask: `Mujhe ghar ke liye kaunsi yojana mil sakti hai?`
+7. Switch to Hindi mode and ask: `मुझे घर के लिए कौन सी योजना मिल सकती है?`
 8. Show source links, verification badges, and the safe fallback for unsupported questions.
 
 ## Manual QA Checklist
@@ -104,6 +104,7 @@ The repo includes a GitHub Pages workflow at `.github/workflows/pages.yml`. Afte
 - Reworked the app into a single-page dashboard with profile, recommendations, and assistant/checklist tools.
 - Fixed recommendation document actions so they open, scroll to, and highlight the checklist panel.
 - Split the assistant and document checklist into side-by-side dashboard panels.
+- Converted Hindi mode from Hinglish to Devanagari copy, summaries, and follow-up prompts.
 
 ## Next Build Tasks
 

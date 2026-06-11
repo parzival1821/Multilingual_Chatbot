@@ -44,6 +44,9 @@
       recommendationsHelp: "Ranked scheme matches with reasons.",
       askTitle: "Ask Assistant",
       askHelp: "Grounded follow-up answers.",
+      promptAyushman: "What documents do I need for Ayushman Bharat?",
+      promptKisan: "Am I eligible for PM-KISAN?",
+      promptWidow: "I am widow of age 55 which scheme is best for me?",
       askPlaceholder: "Ask about eligibility, benefits, or documents",
       ask: "Ask",
       checklistTitle: "Document Checklist",
@@ -55,6 +58,8 @@
       checklistReady: "Checklist ready for",
       copied: "Checklist copied.",
       copyFailed: "Copy failed. Select and copy the list manually.",
+      emptyRecommendations: "Fill the profile and find schemes to see recommendations.",
+      sourceLabel: "Source",
       metricsSchemes: "schemes",
       metricsLanguages: "languages",
       metricsVerified: "verified scheme entries",
@@ -84,68 +89,73 @@
       no: "No"
     },
     hi: {
-      profileTitle: "Eligibility Profile",
-      profileHelp: "Beneficiary ki basic details dein.",
-      area: "Area",
-      occupation: "Rozgar / kaam",
-      gender: "Gender",
-      age: "Age group",
-      income: "Income category",
-      ownsLand: "Kheti ki zameen?",
-      permanentHouse: "Pucca ghar?",
-      lpg: "LPG connection?",
-      bank: "Bank account?",
-      special: "Special category",
-      widow: "Vidhwa",
-      disabled: "Divyang vyakti",
-      girlChildParent: "Ladki ke parent/guardian",
-      demoPresets: "Demo presets",
-      sampleFarmer: "Kisan",
-      sampleWoman: "Woman-led household",
-      sampleVendor: "Street vendor",
-      findSchemes: "Schemes dhoondhein",
-      recommendations: "Recommendations",
-      recommendationsHelp: "Reasons ke saath ranked scheme matches.",
-      askTitle: "Assistant se poochhein",
-      askHelp: "Source-backed follow-up answers.",
-      askPlaceholder: "Eligibility, benefits, ya documents ke baare mein poochhein",
-      ask: "Poochhein",
-      checklistTitle: "Document Checklist",
-      checklistHelp: "Application ke required documents.",
-      chooseScheme: "Scheme chunen",
-      copyChecklist: "Checklist copy karein",
-      downloadChecklist: "Checklist download karein",
-      useChecklist: "Documents dekhein",
-      checklistReady: "Checklist ready hai",
-      copied: "Checklist copied.",
-      copyFailed: "Copy failed. List ko manually select karke copy karein.",
-      metricsSchemes: "schemes",
-      metricsLanguages: "languages",
-      metricsVerified: "verified scheme entries",
-      metricsCitations: "official links",
-      areaRural: "Rural",
-      areaUrban: "Urban",
-      farmer: "Kisan",
-      streetVendor: "Street vendor",
-      informalWorker: "Informal worker",
-      constructionWorker: "Construction worker",
-      domesticWorker: "Domestic worker",
-      student: "Student",
-      other: "Other",
-      female: "Mahila",
-      male: "Purush",
-      otherGender: "Other",
+      profileTitle: "पात्रता प्रोफ़ाइल",
+      profileHelp: "लाभार्थी की मूल जानकारी भरें.",
+      area: "क्षेत्र",
+      occupation: "रोजगार / काम",
+      gender: "लिंग",
+      age: "आयु समूह",
+      income: "आय वर्ग",
+      ownsLand: "खेती योग्य जमीन?",
+      permanentHouse: "स्थायी घर?",
+      lpg: "LPG कनेक्शन?",
+      bank: "बैंक खाता?",
+      special: "विशेष श्रेणी",
+      widow: "विधवा",
+      disabled: "दिव्यांग व्यक्ति",
+      girlChildParent: "बालिका के माता-पिता/अभिभावक",
+      demoPresets: "डेमो प्रोफ़ाइल",
+      sampleFarmer: "किसान",
+      sampleWoman: "महिला-नेतृत्व वाला परिवार",
+      sampleVendor: "स्ट्रीट वेंडर",
+      findSchemes: "योजनाएं खोजें",
+      recommendations: "सुझाई गई योजनाएं",
+      recommendationsHelp: "कारणों के साथ क्रमबद्ध योजना मिलान.",
+      askTitle: "सहायक से पूछें",
+      askHelp: "स्रोत-आधारित फॉलो-अप जवाब.",
+      promptAyushman: "आयुष्मान भारत के लिए कौन से दस्तावेज चाहिए?",
+      promptKisan: "क्या मैं PM-KISAN के लिए पात्र हूं?",
+      promptWidow: "मैं 55 वर्ष की विधवा हूं, मेरे लिए कौन सी योजना बेहतर है?",
+      askPlaceholder: "पात्रता, लाभ या दस्तावेजों के बारे में पूछें",
+      ask: "पूछें",
+      checklistTitle: "दस्तावेज चेकलिस्ट",
+      checklistHelp: "आवेदन के लिए जरूरी दस्तावेज.",
+      chooseScheme: "योजना चुनें",
+      copyChecklist: "चेकलिस्ट कॉपी करें",
+      downloadChecklist: "चेकलिस्ट डाउनलोड करें",
+      useChecklist: "दस्तावेज देखें",
+      checklistReady: "चेकलिस्ट तैयार है",
+      copied: "चेकलिस्ट कॉपी हो गई.",
+      copyFailed: "कॉपी नहीं हो पाया. सूची को चुनकर मैन्युअली कॉपी करें.",
+      emptyRecommendations: "प्रोफ़ाइल भरें और योजनाएं खोजें.",
+      sourceLabel: "स्रोत",
+      metricsSchemes: "योजनाएं",
+      metricsLanguages: "भाषाएं",
+      metricsVerified: "सत्यापित योजना प्रविष्टियां",
+      metricsCitations: "आधिकारिक लिंक",
+      areaRural: "ग्रामीण",
+      areaUrban: "शहरी",
+      farmer: "किसान",
+      streetVendor: "स्ट्रीट वेंडर",
+      informalWorker: "असंगठित कामगार",
+      constructionWorker: "निर्माण कामगार",
+      domesticWorker: "घरेलू कामगार",
+      student: "विद्यार्थी",
+      other: "अन्य",
+      female: "महिला",
+      male: "पुरुष",
+      otherGender: "अन्य",
       age18_40: "18-40",
       age40_59: "40-59",
       age60_79: "60-79",
       age80Plus: "80+",
-      incomeBpl: "BPL / bahut low income",
+      incomeBpl: "BPL / बहुत कम आय",
       incomeEws: "EWS",
       incomeLig: "LIG",
       incomeMig: "MIG",
-      incomeOther: "Other / pata nahi",
-      yes: "Haan",
-      no: "Nahi"
+      incomeOther: "अन्य / पता नहीं",
+      yes: "हां",
+      no: "नहीं"
     }
   };
 
@@ -275,9 +285,23 @@
     return copy[state.language][key] || copy.en[key] || key;
   }
 
+  function languageLabels() {
+    return labels[state.language] || labels.en || {};
+  }
+
+  function localizedReason(reason) {
+    const reasonMap = languageLabels().reasons || {};
+    return reasonMap[reason] || reason;
+  }
+
+  function localizedDocument(documentName) {
+    const documentMap = languageLabels().documents || {};
+    return documentMap[documentName] || documentName;
+  }
+
   function renderRecommendations() {
     if (!state.recommendations.length) {
-      recommendationsEl.innerHTML = '<div class="empty">Fill the profile and find schemes to see recommendations.</div>';
+      recommendationsEl.innerHTML = `<div class="empty">${uiText("emptyRecommendations")}</div>`;
       return;
     }
 
@@ -293,10 +317,10 @@
             </div>
             <p class="verification ${verificationClass(scheme)}">${verificationLabel(scheme)}</p>
             <p>${summary}</p>
-            <ul>${reasons.slice(0, 3).map((reason) => `<li>${reason}</li>`).join("")}</ul>
+            <ul>${reasons.slice(0, 3).map((reason) => `<li>${localizedReason(reason)}</li>`).join("")}</ul>
             <div class="scheme-actions">
               <button class="secondary checklist-action" data-scheme-id="${scheme.id}" type="button">${uiText("useChecklist")}</button>
-              <a class="source-link" href="${scheme.sourceUrls[0]}" target="_blank" rel="noreferrer">Source: ${scheme.sourceUrls[0]}</a>
+              <a class="source-link" href="${scheme.sourceUrls[0]}" target="_blank" rel="noreferrer">${uiText("sourceLabel")}: ${scheme.sourceUrls[0]}</a>
             </div>
           </article>
         `;
@@ -312,7 +336,7 @@
   function renderChecklist() {
     const selectedId = checklistSelect.value || (schemes[0] && schemes[0].id);
     const docs = core.getChecklist(selectedId, schemes);
-    checklistEl.innerHTML = docs.map((doc) => `<li>${doc}</li>`).join("");
+    checklistEl.innerHTML = docs.map((doc) => `<li>${localizedDocument(doc)}</li>`).join("");
   }
 
   function selectChecklist(schemeId, options = {}) {
@@ -329,7 +353,11 @@
   }
 
   function selectedChecklistText() {
-    return core.formatChecklist(checklistSelect.value, schemes);
+    const selected = schemes.find((scheme) => scheme.id === checklistSelect.value);
+    if (!selected) return "";
+    const title = state.language === "hi" ? `${selected.name} दस्तावेज चेकलिस्ट` : `${selected.name} document checklist`;
+    const documents = selected.documents.map((documentName) => `- ${localizedDocument(documentName)}`).join("\n");
+    return `${title}\n\n${documents}\n\n${uiText("sourceLabel")}: ${selected.sourceUrls[0]}`;
   }
 
   function selectedChecklistFileName() {
@@ -347,7 +375,7 @@
     chatAnswer.innerHTML = `
       <h3>${answer.scheme.name}</h3>
       <p>${answer.text}</p>
-      ${answer.citations.map((url) => `<a class="source-link" href="${url}" target="_blank" rel="noreferrer">Source: ${url}</a>`).join("<br />")}
+      ${answer.citations.map((url) => `<a class="source-link" href="${url}" target="_blank" rel="noreferrer">${uiText("sourceLabel")}: ${url}</a>`).join("<br />")}
     `;
   }
 

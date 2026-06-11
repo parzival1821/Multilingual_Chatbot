@@ -67,11 +67,26 @@ assert.equal(docsAnswer.scheme.id, "pmjay");
 assert.match(docsAnswer.text, /Documents to prepare/);
 assert.ok(docsAnswer.citations[0].startsWith("https://"));
 
-const hindiDocsAnswer = core.answerQuestion("Ayushman ke documents kya chahiye?", farmer, schemes, "hi", labels);
+const hindiDocsAnswer = core.answerQuestion("आयुष्मान के लिए कौन से दस्तावेज चाहिए?", farmer, schemes, "hi", labels);
 assert.equal(hindiDocsAnswer.type, "answer");
 assert.equal(hindiDocsAnswer.scheme.id, "pmjay");
-assert.match(hindiDocsAnswer.text, /Documents taiyaar rakhein/);
-assert.match(hindiDocsAnswer.text, /official portal/);
+assert.match(hindiDocsAnswer.text, /तैयार रखने वाले दस्तावेज/);
+assert.match(hindiDocsAnswer.text, /आधिकारिक पोर्टल/);
+assert.match(hindiDocsAnswer.text, /आधार या पहचान दस्तावेज/);
+
+const hindiWidowQuestion = "मैं 55 वर्ष की विधवा हूं, मेरे लिए कौन सी योजना बेहतर है?";
+const hindiWidowMatches = core.retrieveSchemes(hindiWidowQuestion, schemes, 3);
+assert.equal(hindiWidowMatches[0].scheme.id, "nsap", "Devanagari widow follow-up should retrieve NSAP first");
+
+const hindiWidowProfile = core.inferProfileFromQuestion(hindiWidowQuestion, farmer);
+assert.equal(hindiWidowProfile.ageGroup, "40_59");
+assert.ok(hindiWidowProfile.specialCategories.includes("widowed"));
+
+const hindiWidowAnswer = core.answerQuestion(hindiWidowQuestion, hindiWidowProfile, schemes, "hi", labels);
+assert.equal(hindiWidowAnswer.type, "answer");
+assert.equal(hindiWidowAnswer.scheme.id, "nsap");
+assert.match(hindiWidowAnswer.text, /विधवा/);
+assert.match(hindiWidowAnswer.text, /कारण/);
 
 const vendorAnswer = core.answerQuestion("Can I get PM SVANidhi loan as a street vendor?", vendor, schemes, "en", labels);
 assert.equal(vendorAnswer.type, "answer");

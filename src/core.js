@@ -8,7 +8,7 @@
   function normalize(value) {
     return String(value || "")
       .toLowerCase()
-      .replace(/[^\p{L}\p{N}\s-]/gu, " ")
+      .replace(/[^\p{L}\p{M}\p{N}\s-]/gu, " ")
       .replace(/\s+/g, " ")
       .trim();
   }
@@ -38,11 +38,29 @@
       "kya",
       "hai",
       "ke",
-      "liye"
+      "liye",
+      "मैं",
+      "मुझे",
+      "क्या",
+      "कौन",
+      "कौनसी",
+      "कौनसा",
+      "है",
+      "हूं",
+      "हूँ",
+      "के",
+      "की",
+      "का",
+      "को",
+      "से",
+      "में",
+      "और",
+      "लिए",
+      "चाहिए"
     ]);
     return normalize(value)
       .split(" ")
-      .filter((token) => token.length > 2 && !stopwords.has(token));
+      .filter((token) => (token.length > 2 || /[\u0900-\u097F]{2}/u.test(token)) && !stopwords.has(token));
   }
 
   function getSpecial(profile, value) {
@@ -56,12 +74,12 @@
       specialCategories: Array.isArray(profile.specialCategories) ? [...profile.specialCategories] : []
     };
 
-    if (/\b(widow|widowed|vidhwa)\b/.test(text) && !inferred.specialCategories.includes("widowed")) {
+    if (/(widow|widowed|vidhwa|विधवा)/u.test(text) && !inferred.specialCategories.includes("widowed")) {
       inferred.specialCategories.push("widowed");
       if (!inferred.gender || inferred.gender === "other") inferred.gender = "female";
     }
 
-    if (/\b(disabled|disability|divyang)\b/.test(text) && !inferred.specialCategories.includes("disabled")) {
+    if (/(disabled|disability|divyang|दिव्यांग|विकलांग)/u.test(text) && !inferred.specialCategories.includes("disabled")) {
       inferred.specialCategories.push("disabled");
     }
 
@@ -232,7 +250,26 @@
   function retrieveSchemes(question, schemes, limit = 3) {
     const queryTokens = tokenize(question);
     if (!queryTokens.length) return [];
-    const strongTokens = new Set(["widow", "widowed", "vidhwa", "disabled", "disability", "divyang"]);
+    const strongTokens = new Set([
+      "widow",
+      "widowed",
+      "vidhwa",
+      "disabled",
+      "disability",
+      "divyang",
+      "किसान",
+      "आयुष्मान",
+      "उज्ज्वला",
+      "गैस",
+      "घर",
+      "आवास",
+      "पेंशन",
+      "सुकन्या",
+      "वेंडर",
+      "विधवा",
+      "दिव्यांग",
+      "विकलांग"
+    ]);
 
     return schemes
       .map((scheme) => {
@@ -253,11 +290,15 @@
   }
 
   function wantsDocuments(question) {
-    return /(document|documents|doc|paper|papers|kagaz|aadhaar|checklist|required)/i.test(question);
+    return /(document|documents|doc|paper|papers|kagaz|aadhaar|checklist|required|दस्तावेज|कागज|आधार|चेकलिस्ट|जरूरी|चाहिए|चाहिये)/i.test(
+      question
+    );
   }
 
   function wantsEligibility(question) {
-    return /(eligible|eligibility|qualify|apply|mil|milega|kaunsi|which|am i)/i.test(question);
+    return /(eligible|eligibility|qualify|apply|mil|milega|kaunsi|which|am i|पात्र|योग्यता|मिल|मिलेगा|कौन|आवेदन)/i.test(
+      question
+    );
   }
 
   function answerQuestion(question, profile, schemes, language = "en", labelsByLanguage = {}) {
@@ -280,7 +321,19 @@
       "vidhwa",
       "disabled",
       "disability",
-      "divyang"
+      "divyang",
+      "किसान",
+      "आयुष्मान",
+      "उज्ज्वला",
+      "गैस",
+      "घर",
+      "आवास",
+      "पेंशन",
+      "सुकन्या",
+      "वेंडर",
+      "विधवा",
+      "दिव्यांग",
+      "विकलांग"
     ]);
     const topMatch = matches[0];
     const enoughContext =
@@ -298,6 +351,12 @@
     const evaluation = evaluateScheme(inferredProfile, top);
     const citation = top.sourceUrls[0];
     const summary = language === "hi" ? top.hindiSummary : top.summary;
+    const reasonMap = labels.reasons || {};
+    const documentMap = labels.documents || {};
+    const benefitMap = labels.benefits || {};
+    const translatedReasons = evaluation.reasons.map((reason) => reasonMap[reason] || reason);
+    const translatedDocuments = top.documents.map((documentName) => documentMap[documentName] || documentName);
+    const translatedBenefits = top.benefits.map((benefit) => benefitMap[benefit] || benefit);
     const parts = [];
 
     parts.push(summary);
@@ -310,13 +369,13 @@
             ? labels.possibleProfile || "This profile may be a match."
             : labels.limitedProfile || "This profile has limited matching signals.";
       parts.push(statusText);
-      parts.push(`${labels.reasonPrefix || "Reason"}: ${evaluation.reasons.slice(0, 2).join(" ")}`);
+      parts.push(`${labels.reasonPrefix || "Reason"}: ${translatedReasons.slice(0, 2).join(" ")}`);
     }
 
     if (wantsDocuments(question)) {
-      parts.push(`${labels.documentsPrefix || "Documents to prepare"}: ${top.documents.join(", ")}.`);
+      parts.push(`${labels.documentsPrefix || "Documents to prepare"}: ${translatedDocuments.join(", ")}.`);
     } else {
-      parts.push(`${labels.benefitsPrefix || "Key benefits"}: ${top.benefits.slice(0, 3).join(", ")}.`);
+      parts.push(`${labels.benefitsPrefix || "Key benefits"}: ${translatedBenefits.slice(0, 3).join(", ")}.`);
     }
 
     if (top.verificationStatus !== "verified") {

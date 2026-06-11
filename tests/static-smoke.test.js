@@ -4,6 +4,7 @@ const path = require("node:path");
 
 const root = path.join(__dirname, "..");
 const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const pagesWorkflow = fs.readFileSync(path.join(root, ".github", "workflows", "pages.yml"), "utf8");
 
 assert.match(indexHtml, /<h1>Sahayak<\/h1>/, "Home page should identify the product");
 assert.match(indexHtml, /id="metrics"/, "Home page should include knowledge base metrics");
@@ -30,5 +31,12 @@ for (const file of referencedFiles) {
 }
 
 assert.doesNotMatch(indexHtml, /details\.md|plan\.md|schemes\.md/, "Local-only planning docs should not be referenced by the app");
+
+assert.match(pagesWorkflow, /branches: \[main\]/, "Pages workflow should deploy from main");
+assert.match(pagesWorkflow, /pages: write/, "Pages workflow should grant pages write permission");
+assert.match(pagesWorkflow, /id-token: write/, "Pages workflow should grant id-token write permission");
+assert.match(pagesWorkflow, /actions\/configure-pages@v5/, "Pages workflow should configure GitHub Pages");
+assert.match(pagesWorkflow, /actions\/upload-pages-artifact@v4/, "Pages workflow should upload a Pages artifact");
+assert.match(pagesWorkflow, /actions\/deploy-pages@v4/, "Pages workflow should deploy the Pages artifact");
 
 console.log("Static smoke checks passed.");

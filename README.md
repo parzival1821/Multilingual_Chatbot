@@ -52,8 +52,13 @@ npm run check
 
 - `npm test` validates the core eligibility, retrieval, fallback, citation, and checklist behavior.
 - `npm run smoke` validates that the static app shell references the expected assets and demo sections.
+- `npm run smoke` also validates the GitHub Pages workflow shape.
 - Local HTTP smoke checks should return `200 OK` for `/`, `/styles.css`, and `/src/app.js`.
 - The local planning files `details.md`, `plan.md`, and `schemes.md` are intentionally ignored and should not be committed.
+
+## Deployment
+
+The repo includes a GitHub Pages workflow at `.github/workflows/pages.yml`. After GitHub Pages is enabled with GitHub Actions as the source, pushes to `main` deploy the static app.
 
 ## Demo Script
 
@@ -93,11 +98,11 @@ npm run check
 - Added static smoke checks plus a README demo script and manual QA checklist.
 - Added downloadable `.txt` checklists for selected schemes.
 - Added a knowledge-base metrics strip for demo-ready trust/scope signals.
+- Added a GitHub Pages deployment workflow.
 
 ## Next Build Tasks
 
 - Add screenshots once the visual pass is complete.
-- Add a deployment target if time allows.
 
 ## Project Positioning
 

@@ -290,6 +290,13 @@ fieldset {
   margin: 8px 0;
 }
 
+.scheme-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
 .source-link {
   color: var(--blue);
   overflow-wrap: anywhere;

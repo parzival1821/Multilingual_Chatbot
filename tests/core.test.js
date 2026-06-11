@@ -85,6 +85,10 @@ const parsedProfile = core.createProfileFromEntries([
 ]);
 assert.deepEqual(parsedProfile.specialCategories, ["girl_child_parent"]);
 
+const pmuyChecklist = core.getChecklist("pmuy", schemes);
+assert.ok(pmuyChecklist.includes("KYC application form"));
+assert.ok(pmuyChecklist.includes("Bank account details"));
+
 const unknown = core.answerQuestion("Can I get a drone subsidy for my startup?", farmer, schemes, "en", labels);
 assert.equal(unknown.type, "fallback");
 

@@ -18,6 +18,7 @@
 - Personalized scheme recommendations with reasons.
 - Grounded chatbot answers with source links.
 - Document checklist generator.
+- One-click checklist actions from recommendation cards.
 - Safe fallback when the prototype does not know an answer.
 - Hindi labels for questionnaire controls and major answer sections.
 
@@ -58,10 +59,10 @@ npm test
 - Verified the static app and assets are served on the local dev server.
 - Pushed the first implementation checkpoint to `origin/main`.
 - Improved Hindi mode with translated form options, special-category labels, and localized answer prefixes.
+- Added one-click recommendation-to-checklist actions for a cleaner demo flow.
 
 ## Next Build Tasks
 
-- Add a smoother recommendation-to-checklist demo interaction.
 - Add a demo script and screenshots once the visual pass is complete.
 - Add a deployment target if time allows.
 

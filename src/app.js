@@ -42,6 +42,8 @@
       checklistTitle: "Document Checklist",
       chooseScheme: "Choose scheme",
       copyChecklist: "Copy checklist",
+      useChecklist: "Use checklist",
+      checklistReady: "Checklist ready for",
       areaRural: "Rural",
       areaUrban: "Urban",
       farmer: "Farmer",
@@ -89,6 +91,8 @@
       checklistTitle: "Document Checklist",
       chooseScheme: "Scheme chunen",
       copyChecklist: "Checklist copy karein",
+      useChecklist: "Checklist dekhein",
+      checklistReady: "Checklist ready hai",
       areaRural: "Rural",
       areaUrban: "Urban",
       farmer: "Kisan",
@@ -220,6 +224,10 @@
     return scheme.verificationStatus === "verified" ? "verified" : "recheck";
   }
 
+  function uiText(key) {
+    return copy[state.language][key] || copy.en[key] || key;
+  }
+
   function renderRecommendations() {
     if (!state.recommendations.length) {
       recommendationsEl.innerHTML = '<div class="empty">Fill the profile and find schemes to see recommendations.</div>';
@@ -239,7 +247,10 @@
             <p class="verification ${verificationClass(scheme)}">${verificationLabel(scheme)}</p>
             <p>${summary}</p>
             <ul>${reasons.slice(0, 3).map((reason) => `<li>${reason}</li>`).join("")}</ul>
-            <a class="source-link" href="${scheme.sourceUrls[0]}" target="_blank" rel="noreferrer">Source: ${scheme.sourceUrls[0]}</a>
+            <div class="scheme-actions">
+              <button class="secondary checklist-action" data-scheme-id="${scheme.id}" type="button">${uiText("useChecklist")}</button>
+              <a class="source-link" href="${scheme.sourceUrls[0]}" target="_blank" rel="noreferrer">Source: ${scheme.sourceUrls[0]}</a>
+            </div>
           </article>
         `;
       })
@@ -255,6 +266,13 @@
     const selectedId = checklistSelect.value || (schemes[0] && schemes[0].id);
     const docs = core.getChecklist(selectedId, schemes);
     checklistEl.innerHTML = docs.map((doc) => `<li>${doc}</li>`).join("");
+  }
+
+  function selectChecklist(schemeId) {
+    checklistSelect.value = schemeId;
+    renderChecklist();
+    const selected = schemes.find((scheme) => scheme.id === schemeId);
+    copyStatus.textContent = selected ? `${uiText("checklistReady")} ${selected.name}.` : "";
   }
 
   function askQuestion(question) {
@@ -299,6 +317,12 @@
   });
 
   checklistSelect.addEventListener("change", renderChecklist);
+
+  recommendationsEl.addEventListener("click", (event) => {
+    const action = event.target.closest(".checklist-action");
+    if (!action) return;
+    selectChecklist(action.dataset.schemeId);
+  });
 
   document.querySelector("#copyChecklist").addEventListener("click", async () => {
     const items = Array.from(checklistEl.querySelectorAll("li")).map((item) => `- ${item.textContent}`);

@@ -9,14 +9,18 @@ const pagesWorkflow = fs.readFileSync(path.join(root, ".github", "workflows", "p
 assert.match(indexHtml, /<h1>Sahayak<\/h1>/, "Home page should identify the product");
 assert.doesNotMatch(indexHtml, /NSS AI Project/, "Home page should not show the internal project tag");
 assert.match(indexHtml, /id="metrics"/, "Home page should include knowledge base metrics");
+assert.match(indexHtml, /class="dashboard"/, "Home page should use a dashboard layout");
 assert.match(indexHtml, /id="profileForm"/, "Home page should include the eligibility form");
 assert.match(indexHtml, /id="recommendations"/, "Home page should include recommendations");
 assert.match(indexHtml, /id="chatForm"/, "Home page should include the chat form");
 assert.match(indexHtml, /id="checklistSelect"/, "Home page should include the checklist selector");
 assert.match(indexHtml, /id="downloadChecklist"/, "Home page should include checklist download");
+assert.match(indexHtml, /data-tool-tab="assistant"/, "Home page should expose assistant tool tab");
+assert.match(indexHtml, /data-tool-tab="checklist"/, "Home page should expose checklist tool tab");
 assert.match(indexHtml, /data-language="hi"/, "Home page should expose Hindi mode");
 assert.match(indexHtml, /Woman-led household/, "Home page should use clear persona labels");
 assert.match(indexHtml, /Permanent house\?/, "English form should avoid unexplained local terminology");
+assert.doesNotMatch(indexHtml, />Step \d</, "Dashboard should not present as a rough numbered flow");
 
 const referencedFiles = [
   ...Array.from(indexHtml.matchAll(/<link[^>]+href="([^"]+)"/g), (match) => match[1]),

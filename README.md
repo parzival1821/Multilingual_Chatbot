@@ -101,6 +101,7 @@ The repo includes a GitHub Pages workflow at `.github/workflows/pages.yml`. Afte
 - Added a GitHub Pages deployment workflow.
 - Cleaned up English UX copy, moved demo presets below the questionnaire, and renamed the unclear woman/persona and housing labels.
 - Fixed follow-up retrieval so widow/age questions route to NSAP instead of generic pension schemes.
+- Reworked the app into a single-page dashboard with profile, recommendations, and tabbed assistant/checklist tools.
 
 ## Next Build Tasks
 

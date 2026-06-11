@@ -21,6 +21,7 @@
   const copy = {
     en: {
       profileTitle: "Eligibility Profile",
+      profileHelp: "Tell Sahayak about the beneficiary.",
       area: "Area",
       occupation: "Occupation",
       gender: "Gender",
@@ -40,6 +41,11 @@
       sampleVendor: "Street vendor",
       findSchemes: "Find Schemes",
       recommendations: "Recommendations",
+      recommendationsHelp: "Ranked scheme matches with reasons.",
+      toolsTitle: "Assistant Tools",
+      toolsHelp: "Ask questions or prepare documents.",
+      assistantTab: "Assistant",
+      checklistTab: "Checklist",
       askTitle: "Ask a Follow-Up",
       askPlaceholder: "Ask about eligibility, benefits, or documents",
       ask: "Ask",
@@ -81,6 +87,7 @@
     },
     hi: {
       profileTitle: "Eligibility Profile",
+      profileHelp: "Beneficiary ki basic details dein.",
       area: "Area",
       occupation: "Rozgar / kaam",
       gender: "Gender",
@@ -100,6 +107,11 @@
       sampleVendor: "Street vendor",
       findSchemes: "Schemes dhoondhein",
       recommendations: "Recommendations",
+      recommendationsHelp: "Reasons ke saath ranked scheme matches.",
+      toolsTitle: "Assistant Tools",
+      toolsHelp: "Questions poochhein ya documents taiyaar karein.",
+      assistantTab: "Assistant",
+      checklistTab: "Checklist",
       askTitle: "Follow-up poochhein",
       askPlaceholder: "Eligibility, benefits, ya documents ke baare mein poochhein",
       ask: "Poochhein",
@@ -190,6 +202,8 @@
   const copyStatus = document.querySelector("#copyStatus");
   const downloadChecklist = document.querySelector("#downloadChecklist");
   const metricsEl = document.querySelector("#metrics");
+  const toolTabs = document.querySelectorAll("[data-tool-tab]");
+  const toolPanels = document.querySelectorAll("[data-tool-panel]");
 
   function setLanguage(language) {
     state.language = language;
@@ -221,6 +235,17 @@
     metricsEl.innerHTML = metrics
       .map(([value, label]) => `<span class="metric"><strong>${value}</strong> ${label}</span>`)
       .join("");
+  }
+
+  function setToolPanel(panelName) {
+    toolTabs.forEach((tab) => {
+      const active = tab.dataset.toolTab === panelName;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", String(active));
+    });
+    toolPanels.forEach((panel) => {
+      panel.classList.toggle("active", panel.dataset.toolPanel === panelName);
+    });
   }
 
   function profileFromForm() {
@@ -338,6 +363,10 @@
 
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.language));
+  });
+
+  toolTabs.forEach((button) => {
+    button.addEventListener("click", () => setToolPanel(button.dataset.toolTab));
   });
 
   document.querySelectorAll("[data-persona]").forEach((button) => {

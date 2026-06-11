@@ -35,7 +35,7 @@ button {
 }
 
 .app-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1380px, calc(100% - 32px));
   margin: 0 auto;
   padding: 24px 0 40px;
 }
@@ -145,15 +145,11 @@ h2 {
   background: #ecfdf5;
 }
 
-.layout {
+.dashboard {
   display: grid;
-  grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
+  grid-template-columns: minmax(300px, 0.9fr) minmax(420px, 1.25fr) minmax(300px, 0.9fr);
   gap: 16px;
   align-items: start;
-}
-
-.bottom-layout {
-  margin-top: 16px;
 }
 
 .panel {
@@ -165,11 +161,15 @@ h2 {
 }
 
 .section-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  gap: 4px;
   margin-bottom: 16px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
 label,
@@ -240,6 +240,9 @@ fieldset {
 .recommendations {
   display: grid;
   gap: 12px;
+  max-height: 72vh;
+  overflow: auto;
+  padding-right: 4px;
 }
 
 .scheme-card {
@@ -343,9 +346,49 @@ fieldset {
 
 .chat-form {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   gap: 10px;
   margin: 14px 0;
+}
+
+.chat-form .primary {
+  width: 100%;
+}
+
+.tools-panel {
+  position: sticky;
+  top: 16px;
+}
+
+.tool-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tool-tab {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfd;
+  color: var(--ink);
+  min-height: 40px;
+  padding: 8px 10px;
+  font-weight: 800;
+}
+
+.tool-tab.active {
+  border-color: var(--teal);
+  background: #ecfdf5;
+  color: var(--teal-strong);
+}
+
+.tool-pane {
+  display: none;
+}
+
+.tool-pane.active {
+  display: block;
 }
 
 .answer-box {
@@ -382,14 +425,18 @@ fieldset {
 
 @media (max-width: 860px) {
   .topbar,
-  .layout {
+  .dashboard {
     display: block;
   }
 
   .language-toggle,
   .results-panel,
-  .checklist-panel {
+  .tools-panel {
     margin-top: 16px;
+  }
+
+  .tools-panel {
+    position: static;
   }
 
   .grid-2,

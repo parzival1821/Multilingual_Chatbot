@@ -297,6 +297,12 @@ fieldset {
   gap: 10px;
 }
 
+.checklist-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .source-link {
   color: var(--blue);
   overflow-wrap: anywhere;
@@ -354,7 +360,8 @@ fieldset {
   }
 
   .grid-2,
-  .chat-form {
+  .chat-form,
+  .checklist-actions {
     grid-template-columns: 1fr;
   }
 }

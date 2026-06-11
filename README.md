@@ -19,6 +19,7 @@
 - Grounded chatbot answers with source links.
 - Document checklist generator.
 - One-click checklist actions from recommendation cards.
+- Copyable and downloadable `.txt` checklist output.
 - Safe fallback when the prototype does not know an answer.
 - Hindi labels for questionnaire controls and major answer sections.
 
@@ -59,9 +60,10 @@ npm run check
 2. Click the `Farmer` sample persona.
 3. Show that PM-KISAN ranks as a strong match and PM-JAY appears for health coverage.
 4. Click `Use checklist` on PM-KISAN and show the required documents.
-5. Ask: `What documents do I need for Ayushman Bharat?`
-6. Switch to Hindi mode and ask: `Mujhe ghar ke liye kaunsi yojana mil sakti hai?`
-7. Show source links, verification badges, and the safe fallback for unsupported questions.
+5. Copy or download the checklist to show the low-bandwidth handoff.
+6. Ask: `What documents do I need for Ayushman Bharat?`
+7. Switch to Hindi mode and ask: `Mujhe ghar ke liye kaunsi yojana mil sakti hai?`
+8. Show source links, verification badges, and the safe fallback for unsupported questions.
 
 ## Manual QA Checklist
 
@@ -69,6 +71,7 @@ npm run check
 - Woman head-of-household persona shows Ujjwala, PMAY-U, and Sukanya.
 - Street vendor persona ranks PM SVANidhi first.
 - Hindi mode updates labels, options, answer prefixes, and checklist actions.
+- Checklist copy and download actions produce a scheme-specific document list.
 - Unsupported questions produce a safe fallback instead of invented scheme details.
 - `details.md`, `plan.md`, and `schemes.md` do not appear in git status as staged or tracked files.
 
@@ -87,6 +90,7 @@ npm run check
 - Improved Hindi mode with translated form options, special-category labels, and localized answer prefixes.
 - Added one-click recommendation-to-checklist actions for a cleaner demo flow.
 - Added static smoke checks plus a README demo script and manual QA checklist.
+- Added downloadable `.txt` checklists for selected schemes.
 
 ## Next Build Tasks
 

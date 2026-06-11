@@ -10,6 +10,7 @@ assert.match(indexHtml, /id="profileForm"/, "Home page should include the eligib
 assert.match(indexHtml, /id="recommendations"/, "Home page should include recommendations");
 assert.match(indexHtml, /id="chatForm"/, "Home page should include the chat form");
 assert.match(indexHtml, /id="checklistSelect"/, "Home page should include the checklist selector");
+assert.match(indexHtml, /id="downloadChecklist"/, "Home page should include checklist download");
 assert.match(indexHtml, /data-language="hi"/, "Home page should expose Hindi mode");
 
 const referencedFiles = [

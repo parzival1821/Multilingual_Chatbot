@@ -300,6 +300,13 @@
     return scheme ? scheme.documents : [];
   }
 
+  function formatChecklist(schemeId, schemes) {
+    const scheme = schemes.find((item) => item.id === schemeId);
+    if (!scheme) return "";
+    const documents = scheme.documents.map((document) => `- ${document}`).join("\n");
+    return `${scheme.name} document checklist\n\n${documents}\n\nSource: ${scheme.sourceUrls[0]}`;
+  }
+
   function createProfileFromEntries(entries) {
     const profile = {};
     for (const [key, value] of entries) {
@@ -322,6 +329,7 @@
     retrieveSchemes,
     answerQuestion,
     getChecklist,
+    formatChecklist,
     createProfileFromEntries
   };
 });

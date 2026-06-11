@@ -42,8 +42,11 @@
       checklistTitle: "Document Checklist",
       chooseScheme: "Choose scheme",
       copyChecklist: "Copy checklist",
+      downloadChecklist: "Download checklist",
       useChecklist: "Use checklist",
       checklistReady: "Checklist ready for",
+      copied: "Checklist copied.",
+      copyFailed: "Copy failed. Select and copy the list manually.",
       areaRural: "Rural",
       areaUrban: "Urban",
       farmer: "Farmer",
@@ -91,8 +94,11 @@
       checklistTitle: "Document Checklist",
       chooseScheme: "Scheme chunen",
       copyChecklist: "Checklist copy karein",
+      downloadChecklist: "Checklist download karein",
       useChecklist: "Checklist dekhein",
       checklistReady: "Checklist ready hai",
+      copied: "Checklist copied.",
+      copyFailed: "Copy failed. List ko manually select karke copy karein.",
       areaRural: "Rural",
       areaUrban: "Urban",
       farmer: "Kisan",
@@ -166,6 +172,7 @@
   const chatInput = document.querySelector("#chatInput");
   const chatAnswer = document.querySelector("#chatAnswer");
   const copyStatus = document.querySelector("#copyStatus");
+  const downloadChecklist = document.querySelector("#downloadChecklist");
 
   function setLanguage(language) {
     state.language = language;
@@ -275,6 +282,16 @@
     copyStatus.textContent = selected ? `${uiText("checklistReady")} ${selected.name}.` : "";
   }
 
+  function selectedChecklistText() {
+    return core.formatChecklist(checklistSelect.value, schemes);
+  }
+
+  function selectedChecklistFileName() {
+    const selected = schemes.find((scheme) => scheme.id === checklistSelect.value);
+    const slug = selected ? core.normalize(selected.name).replace(/\s+/g, "-") : "scheme";
+    return `${slug}-checklist.txt`;
+  }
+
   function askQuestion(question) {
     const answer = core.answerQuestion(question, state.profile, schemes, state.language, labels);
     if (answer.type === "fallback") {
@@ -325,15 +342,25 @@
   });
 
   document.querySelector("#copyChecklist").addEventListener("click", async () => {
-    const items = Array.from(checklistEl.querySelectorAll("li")).map((item) => `- ${item.textContent}`);
-    const selected = schemes.find((scheme) => scheme.id === checklistSelect.value);
-    const text = `${selected.name} document checklist\n${items.join("\n")}`;
+    const text = selectedChecklistText();
     try {
       await navigator.clipboard.writeText(text);
-      copyStatus.textContent = "Checklist copied.";
+      copyStatus.textContent = uiText("copied");
     } catch (error) {
-      copyStatus.textContent = "Copy failed. Select and copy the list manually.";
+      copyStatus.textContent = uiText("copyFailed");
     }
+  });
+
+  downloadChecklist.addEventListener("click", () => {
+    const blob = new Blob([selectedChecklistText()], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = selectedChecklistFileName();
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
   });
 
   setFormProfile(state.profile);

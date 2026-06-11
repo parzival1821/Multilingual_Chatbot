@@ -27,6 +27,11 @@
       "can",
       "get",
       "my",
+      "am",
+      "me",
+      "age",
+      "scheme",
+      "best",
       "mein",
       "mujhe",
       "kaunsi",
@@ -42,6 +47,34 @@
 
   function getSpecial(profile, value) {
     return Array.isArray(profile.specialCategories) && profile.specialCategories.includes(value);
+  }
+
+  function inferProfileFromQuestion(question, profile) {
+    const text = normalize(question);
+    const inferred = {
+      ...profile,
+      specialCategories: Array.isArray(profile.specialCategories) ? [...profile.specialCategories] : []
+    };
+
+    if (/\b(widow|widowed|vidhwa)\b/.test(text) && !inferred.specialCategories.includes("widowed")) {
+      inferred.specialCategories.push("widowed");
+      if (!inferred.gender || inferred.gender === "other") inferred.gender = "female";
+    }
+
+    if (/\b(disabled|disability|divyang)\b/.test(text) && !inferred.specialCategories.includes("disabled")) {
+      inferred.specialCategories.push("disabled");
+    }
+
+    const ageMatch = text.match(/\b(\d{1,3})\b/);
+    if (ageMatch) {
+      const age = Number(ageMatch[1]);
+      if (age >= 80) inferred.ageGroup = "80_plus";
+      else if (age >= 60) inferred.ageGroup = "60_79";
+      else if (age >= 40) inferred.ageGroup = "40_59";
+      else if (age >= 18) inferred.ageGroup = "18_40";
+    }
+
+    return inferred;
   }
 
   function evaluateScheme(profile, scheme) {
@@ -199,6 +232,7 @@
   function retrieveSchemes(question, schemes, limit = 3) {
     const queryTokens = tokenize(question);
     if (!queryTokens.length) return [];
+    const strongTokens = new Set(["widow", "widowed", "vidhwa", "disabled", "disability", "divyang"]);
 
     return schemes
       .map((scheme) => {
@@ -207,7 +241,7 @@
         const matchedTokens = [];
         for (const token of queryTokens) {
           if (textTokens.has(token)) {
-            score += token.length > 5 ? 2 : 1;
+            score += strongTokens.has(token) ? 3 : token.length > 5 ? 2 : 1;
             matchedTokens.push(token);
           }
         }
@@ -240,7 +274,13 @@
       "pension",
       "sukanya",
       "vendor",
-      "svanidhi"
+      "svanidhi",
+      "widow",
+      "widowed",
+      "vidhwa",
+      "disabled",
+      "disability",
+      "divyang"
     ]);
     const topMatch = matches[0];
     const enoughContext =
@@ -254,7 +294,8 @@
     }
 
     const top = matches[0].scheme;
-    const evaluation = evaluateScheme(profile, top);
+    const inferredProfile = inferProfileFromQuestion(question, profile);
+    const evaluation = evaluateScheme(inferredProfile, top);
     const citation = top.sourceUrls[0];
     const summary = language === "hi" ? top.hindiSummary : top.summary;
     const parts = [];
@@ -343,6 +384,7 @@
     getChecklist,
     formatChecklist,
     getKnowledgeStats,
+    inferProfileFromQuestion,
     createProfileFromEntries
   };
 });

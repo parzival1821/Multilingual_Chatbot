@@ -78,6 +78,30 @@ assert.equal(vendorAnswer.type, "answer");
 assert.equal(vendorAnswer.scheme.id, "pmsvanidhi");
 assert.match(vendorAnswer.text, /latest eligibility and amount details should be rechecked/);
 
+const widowQuestion = "I am widow of age 55 which scheme is best for me?";
+const widowMatches = core.retrieveSchemes(widowQuestion, schemes, 3);
+assert.equal(widowMatches[0].scheme.id, "nsap", "Widow follow-up should retrieve NSAP first");
+
+const inferredWidowProfile = core.inferProfileFromQuestion(widowQuestion, {
+  area: "urban",
+  occupation: "informal_worker",
+  gender: "female",
+  ageGroup: "18_40",
+  incomeGroup: "bpl",
+  ownsLand: "no",
+  hasPuccaHouse: "no",
+  hasLpg: "yes",
+  hasBank: "yes",
+  specialCategories: []
+});
+assert.equal(inferredWidowProfile.ageGroup, "40_59");
+assert.ok(inferredWidowProfile.specialCategories.includes("widowed"));
+
+const widowAnswer = core.answerQuestion(widowQuestion, inferredWidowProfile, schemes, "en", labels);
+assert.equal(widowAnswer.type, "answer");
+assert.equal(widowAnswer.scheme.id, "nsap");
+assert.match(widowAnswer.text, /widow/i);
+
 const parsedProfile = core.createProfileFromEntries([
   ["area", "urban"],
   ["occupation", "informal_worker"],

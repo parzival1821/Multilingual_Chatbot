@@ -40,11 +40,37 @@ http://localhost:4173
 npm test
 ```
 
+Run all local checks:
+
+```bash
+npm run check
+```
+
 ## Verification
 
 - `npm test` validates the core eligibility, retrieval, fallback, citation, and checklist behavior.
+- `npm run smoke` validates that the static app shell references the expected assets and demo sections.
 - Local HTTP smoke checks should return `200 OK` for `/`, `/styles.css`, and `/src/app.js`.
 - The local planning files `details.md`, `plan.md`, and `schemes.md` are intentionally ignored and should not be committed.
+
+## Demo Script
+
+1. Open the app and keep the language in English.
+2. Click the `Farmer` sample persona.
+3. Show that PM-KISAN ranks as a strong match and PM-JAY appears for health coverage.
+4. Click `Use checklist` on PM-KISAN and show the required documents.
+5. Ask: `What documents do I need for Ayushman Bharat?`
+6. Switch to Hindi mode and ask: `Mujhe ghar ke liye kaunsi yojana mil sakti hai?`
+7. Show source links, verification badges, and the safe fallback for unsupported questions.
+
+## Manual QA Checklist
+
+- Farmer persona ranks PM-KISAN first.
+- Woman head-of-household persona shows Ujjwala, PMAY-U, and Sukanya.
+- Street vendor persona ranks PM SVANidhi first.
+- Hindi mode updates labels, options, answer prefixes, and checklist actions.
+- Unsupported questions produce a safe fallback instead of invented scheme details.
+- `details.md`, `plan.md`, and `schemes.md` do not appear in git status as staged or tracked files.
 
 ## Progress Log
 
@@ -60,10 +86,11 @@ npm test
 - Pushed the first implementation checkpoint to `origin/main`.
 - Improved Hindi mode with translated form options, special-category labels, and localized answer prefixes.
 - Added one-click recommendation-to-checklist actions for a cleaner demo flow.
+- Added static smoke checks plus a README demo script and manual QA checklist.
 
 ## Next Build Tasks
 
-- Add a demo script and screenshots once the visual pass is complete.
+- Add screenshots once the visual pass is complete.
 - Add a deployment target if time allows.
 
 ## Project Positioning

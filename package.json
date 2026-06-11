@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "python3 -m http.server 4173",
     "test": "node tests/core.test.js",
-    "check": "npm test"
+    "smoke": "node tests/static-smoke.test.js",
+    "check": "npm test && npm run smoke"
   }
 }

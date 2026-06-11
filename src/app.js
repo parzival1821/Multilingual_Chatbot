@@ -42,14 +42,12 @@
       findSchemes: "Find Schemes",
       recommendations: "Recommendations",
       recommendationsHelp: "Ranked scheme matches with reasons.",
-      toolsTitle: "Assistant Tools",
-      toolsHelp: "Ask questions or prepare documents.",
-      assistantTab: "Assistant",
-      checklistTab: "Checklist",
-      askTitle: "Ask a Follow-Up",
+      askTitle: "Ask Assistant",
+      askHelp: "Grounded follow-up answers.",
       askPlaceholder: "Ask about eligibility, benefits, or documents",
       ask: "Ask",
       checklistTitle: "Document Checklist",
+      checklistHelp: "Required application documents.",
       chooseScheme: "Choose scheme",
       copyChecklist: "Copy checklist",
       downloadChecklist: "Download checklist",
@@ -108,14 +106,12 @@
       findSchemes: "Schemes dhoondhein",
       recommendations: "Recommendations",
       recommendationsHelp: "Reasons ke saath ranked scheme matches.",
-      toolsTitle: "Assistant Tools",
-      toolsHelp: "Questions poochhein ya documents taiyaar karein.",
-      assistantTab: "Assistant",
-      checklistTab: "Checklist",
-      askTitle: "Follow-up poochhein",
+      askTitle: "Assistant se poochhein",
+      askHelp: "Source-backed follow-up answers.",
       askPlaceholder: "Eligibility, benefits, ya documents ke baare mein poochhein",
       ask: "Poochhein",
       checklistTitle: "Document Checklist",
+      checklistHelp: "Application ke required documents.",
       chooseScheme: "Scheme chunen",
       copyChecklist: "Checklist copy karein",
       downloadChecklist: "Checklist download karein",
@@ -202,10 +198,7 @@
   const copyStatus = document.querySelector("#copyStatus");
   const downloadChecklist = document.querySelector("#downloadChecklist");
   const metricsEl = document.querySelector("#metrics");
-  const toolsPanel = document.querySelector(".tools-panel");
   const checklistPanel = document.querySelector("#checklistPanel");
-  const toolTabs = document.querySelectorAll("[data-tool-tab]");
-  const toolPanels = document.querySelectorAll("[data-tool-panel]");
 
   function setLanguage(language) {
     state.language = language;
@@ -237,17 +230,6 @@
     metricsEl.innerHTML = metrics
       .map(([value, label]) => `<span class="metric"><strong>${value}</strong> ${label}</span>`)
       .join("");
-  }
-
-  function setToolPanel(panelName) {
-    toolTabs.forEach((tab) => {
-      const active = tab.dataset.toolTab === panelName;
-      tab.classList.toggle("active", active);
-      tab.setAttribute("aria-selected", String(active));
-    });
-    toolPanels.forEach((panel) => {
-      panel.classList.toggle("active", panel.dataset.toolPanel === panelName);
-    });
   }
 
   function profileFromForm() {
@@ -340,8 +322,7 @@
     copyStatus.textContent = selected ? `${uiText("checklistReady")} ${selected.name}.` : "";
 
     if (options.reveal) {
-      setToolPanel("checklist");
-      toolsPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      checklistPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       checklistPanel.classList.add("attention");
       window.setTimeout(() => checklistPanel.classList.remove("attention"), 1200);
     }
@@ -372,10 +353,6 @@
 
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.language));
-  });
-
-  toolTabs.forEach((button) => {
-    button.addEventListener("click", () => setToolPanel(button.dataset.toolTab));
   });
 
   document.querySelectorAll("[data-persona]").forEach((button) => {

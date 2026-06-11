@@ -16,15 +16,16 @@ assert.match(indexHtml, /id="recommendations"/, "Home page should include recomm
 assert.match(indexHtml, /id="chatForm"/, "Home page should include the chat form");
 assert.match(indexHtml, /id="checklistSelect"/, "Home page should include the checklist selector");
 assert.match(indexHtml, /id="downloadChecklist"/, "Home page should include checklist download");
-assert.match(indexHtml, /data-tool-tab="assistant"/, "Home page should expose assistant tool tab");
-assert.match(indexHtml, /data-tool-tab="checklist"/, "Home page should expose checklist tool tab");
+assert.match(indexHtml, /class="panel assistant-panel"/, "Home page should show assistant as its own panel");
+assert.match(indexHtml, /class="panel checklist-panel"/, "Home page should show checklist as its own panel");
+assert.doesNotMatch(indexHtml, /role="tab"/, "Assistant and checklist should not be hidden behind tabs");
 assert.match(indexHtml, /data-language="hi"/, "Home page should expose Hindi mode");
 assert.match(indexHtml, /Woman-led household/, "Home page should use clear persona labels");
 assert.match(indexHtml, /Permanent house\?/, "English form should avoid unexplained local terminology");
 assert.doesNotMatch(indexHtml, />Step \d</, "Dashboard should not present as a rough numbered flow");
 assert.match(appJs, /View documents/, "Recommendation action should clearly describe the document action");
-assert.match(appJs, /setToolPanel\("checklist"\)/, "Recommendation action should reveal the checklist tab");
 assert.match(appJs, /scrollIntoView/, "Recommendation action should bring the checklist panel into view");
+assert.doesNotMatch(appJs, /setToolPanel/, "Assistant and checklist panels should not need tab switching");
 
 const referencedFiles = [
   ...Array.from(indexHtml.matchAll(/<link[^>]+href="([^"]+)"/g), (match) => match[1]),

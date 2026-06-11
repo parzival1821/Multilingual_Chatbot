@@ -143,43 +143,41 @@
           <div id="recommendations" class="recommendations"></div>
         </section>
 
-        <aside class="panel tools-panel">
+        <section class="panel assistant-panel">
           <div class="section-heading">
-            <h2 data-i18n="toolsTitle">Assistant Tools</h2>
-            <p data-i18n="toolsHelp">Ask questions or prepare documents.</p>
+            <h2 data-i18n="askTitle">Ask Assistant</h2>
+            <p data-i18n="askHelp">Grounded follow-up answers.</p>
           </div>
 
-          <div class="tool-tabs" role="tablist" aria-label="Assistant tools">
-            <button class="tool-tab active" data-tool-tab="assistant" type="button" role="tab" aria-selected="true" data-i18n="assistantTab">Assistant</button>
-            <button class="tool-tab" data-tool-tab="checklist" type="button" role="tab" aria-selected="false" data-i18n="checklistTab">Checklist</button>
+          <div class="prompt-row">
+            <button type="button" class="prompt">What documents do I need for Ayushman Bharat?</button>
+            <button type="button" class="prompt">Am I eligible for PM-KISAN?</button>
+            <button type="button" class="prompt">I am widow of age 55 which scheme is best for me?</button>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" data-i18n-placeholder="askPlaceholder" placeholder="Ask about eligibility, benefits, or documents" />
+            <button class="primary" type="submit" data-i18n="ask">Ask</button>
+          </form>
+          <div id="chatAnswer" class="answer-box"></div>
+        </section>
+
+        <section class="panel checklist-panel" id="checklistPanel">
+          <div class="section-heading">
+            <h2 data-i18n="checklistTitle">Document Checklist</h2>
+            <p data-i18n="checklistHelp">Required application documents.</p>
           </div>
 
-          <section class="tool-pane active" data-tool-panel="assistant" role="tabpanel">
-            <div class="prompt-row">
-              <button type="button" class="prompt">What documents do I need for Ayushman Bharat?</button>
-              <button type="button" class="prompt">Am I eligible for PM-KISAN?</button>
-              <button type="button" class="prompt">I am widow of age 55 which scheme is best for me?</button>
-            </div>
-            <form id="chatForm" class="chat-form">
-              <input id="chatInput" type="text" data-i18n-placeholder="askPlaceholder" placeholder="Ask about eligibility, benefits, or documents" />
-              <button class="primary" type="submit" data-i18n="ask">Ask</button>
-            </form>
-            <div id="chatAnswer" class="answer-box"></div>
-          </section>
-
-          <section class="tool-pane" data-tool-panel="checklist" role="tabpanel" id="checklistPanel">
-            <label>
-              <span data-i18n="chooseScheme">Choose scheme</span>
-              <select id="checklistSelect"></select>
-            </label>
-            <ul id="checklist" class="checklist"></ul>
-            <div class="checklist-actions">
-              <button id="copyChecklist" class="secondary" type="button" data-i18n="copyChecklist">Copy checklist</button>
-              <button id="downloadChecklist" class="secondary" type="button" data-i18n="downloadChecklist">Download checklist</button>
-            </div>
-            <p id="copyStatus" class="copy-status" role="status"></p>
-          </section>
-        </aside>
+          <label>
+            <span data-i18n="chooseScheme">Choose scheme</span>
+            <select id="checklistSelect"></select>
+          </label>
+          <ul id="checklist" class="checklist"></ul>
+          <div class="checklist-actions">
+            <button id="copyChecklist" class="secondary" type="button" data-i18n="copyChecklist">Copy checklist</button>
+            <button id="downloadChecklist" class="secondary" type="button" data-i18n="downloadChecklist">Download checklist</button>
+          </div>
+          <p id="copyStatus" class="copy-status" role="status"></p>
+        </section>
       </section>
     </main>
 

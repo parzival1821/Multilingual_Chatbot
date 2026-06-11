@@ -391,6 +391,11 @@ fieldset {
   display: block;
 }
 
+.tool-pane.attention {
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.16);
+}
+
 .answer-box {
   min-height: 96px;
   border: 1px dashed var(--line);

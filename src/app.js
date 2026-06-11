@@ -53,7 +53,7 @@
       chooseScheme: "Choose scheme",
       copyChecklist: "Copy checklist",
       downloadChecklist: "Download checklist",
-      useChecklist: "Use checklist",
+      useChecklist: "View documents",
       checklistReady: "Checklist ready for",
       copied: "Checklist copied.",
       copyFailed: "Copy failed. Select and copy the list manually.",
@@ -119,7 +119,7 @@
       chooseScheme: "Scheme chunen",
       copyChecklist: "Checklist copy karein",
       downloadChecklist: "Checklist download karein",
-      useChecklist: "Checklist dekhein",
+      useChecklist: "Documents dekhein",
       checklistReady: "Checklist ready hai",
       copied: "Checklist copied.",
       copyFailed: "Copy failed. List ko manually select karke copy karein.",
@@ -202,6 +202,8 @@
   const copyStatus = document.querySelector("#copyStatus");
   const downloadChecklist = document.querySelector("#downloadChecklist");
   const metricsEl = document.querySelector("#metrics");
+  const toolsPanel = document.querySelector(".tools-panel");
+  const checklistPanel = document.querySelector("#checklistPanel");
   const toolTabs = document.querySelectorAll("[data-tool-tab]");
   const toolPanels = document.querySelectorAll("[data-tool-panel]");
 
@@ -331,11 +333,18 @@
     checklistEl.innerHTML = docs.map((doc) => `<li>${doc}</li>`).join("");
   }
 
-  function selectChecklist(schemeId) {
+  function selectChecklist(schemeId, options = {}) {
     checklistSelect.value = schemeId;
     renderChecklist();
     const selected = schemes.find((scheme) => scheme.id === schemeId);
     copyStatus.textContent = selected ? `${uiText("checklistReady")} ${selected.name}.` : "";
+
+    if (options.reveal) {
+      setToolPanel("checklist");
+      toolsPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      checklistPanel.classList.add("attention");
+      window.setTimeout(() => checklistPanel.classList.remove("attention"), 1200);
+    }
   }
 
   function selectedChecklistText() {
@@ -398,7 +407,7 @@
   recommendationsEl.addEventListener("click", (event) => {
     const action = event.target.closest(".checklist-action");
     if (!action) return;
-    selectChecklist(action.dataset.schemeId);
+    selectChecklist(action.dataset.schemeId, { reveal: true });
   });
 
   document.querySelector("#copyChecklist").addEventListener("click", async () => {

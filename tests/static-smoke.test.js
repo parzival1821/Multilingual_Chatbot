@@ -4,6 +4,7 @@ const path = require("node:path");
 
 const root = path.join(__dirname, "..");
 const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const appJs = fs.readFileSync(path.join(root, "src", "app.js"), "utf8");
 const pagesWorkflow = fs.readFileSync(path.join(root, ".github", "workflows", "pages.yml"), "utf8");
 
 assert.match(indexHtml, /<h1>Sahayak<\/h1>/, "Home page should identify the product");
@@ -21,6 +22,9 @@ assert.match(indexHtml, /data-language="hi"/, "Home page should expose Hindi mod
 assert.match(indexHtml, /Woman-led household/, "Home page should use clear persona labels");
 assert.match(indexHtml, /Permanent house\?/, "English form should avoid unexplained local terminology");
 assert.doesNotMatch(indexHtml, />Step \d</, "Dashboard should not present as a rough numbered flow");
+assert.match(appJs, /View documents/, "Recommendation action should clearly describe the document action");
+assert.match(appJs, /setToolPanel\("checklist"\)/, "Recommendation action should reveal the checklist tab");
+assert.match(appJs, /scrollIntoView/, "Recommendation action should bring the checklist panel into view");
 
 const referencedFiles = [
   ...Array.from(indexHtml.matchAll(/<link[^>]+href="([^"]+)"/g), (match) => match[1]),

@@ -15,7 +15,7 @@
 - English and Hindi mode.
 - Guided eligibility questionnaire.
 - Sample personas for quick demos.
-- Knowledge-base metrics for scheme count, languages, verified sources, and citations.
+- Knowledge-base metrics for scheme count, languages, verified scheme entries, and official links.
 - Personalized scheme recommendations with reasons.
 - Grounded chatbot answers with source links.
 - Document checklist generator.

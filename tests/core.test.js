@@ -67,6 +67,11 @@ assert.equal(docsAnswer.scheme.id, "pmjay");
 assert.match(docsAnswer.text, /Documents to prepare/);
 assert.ok(docsAnswer.citations[0].startsWith("https://"));
 
+const vendorAnswer = core.answerQuestion("Can I get PM SVANidhi loan as a street vendor?", vendor, schemes, "en", labels);
+assert.equal(vendorAnswer.type, "answer");
+assert.equal(vendorAnswer.scheme.id, "pmsvanidhi");
+assert.match(vendorAnswer.text, /latest eligibility and amount details should be rechecked/);
+
 const unknown = core.answerQuestion("Can I get a drone subsidy for my startup?", farmer, schemes, "en", labels);
 assert.equal(unknown.type, "fallback");
 

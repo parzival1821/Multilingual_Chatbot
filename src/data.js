@@ -233,7 +233,10 @@
       low: "Explore",
       fallback:
         "I could not find a grounded answer in the current prototype knowledge base. This demo currently covers only the listed schemes.",
-      disclaimer: "Please verify final eligibility on the official portal before applying."
+      disclaimer: "Please verify final eligibility on the official portal before applying.",
+      verified: "Verified official source",
+      recheck: "Official source, recheck latest rules",
+      recheckNote: "This scheme entry uses an official source, but latest eligibility and amount details should be rechecked."
     },
     hi: {
       eligible: "Majboot match",
@@ -241,7 +244,10 @@
       low: "Jankari dekhein",
       fallback:
         "Is prototype knowledge base mein iska pakka jawab nahi mila. Demo abhi sirf listed schemes cover karta hai.",
-      disclaimer: "Apply karne se pehle official portal par final eligibility zaroor verify karein."
+      disclaimer: "Apply karne se pehle official portal par final eligibility zaroor verify karein.",
+      verified: "Official source verified",
+      recheck: "Official source, latest rules recheck karein",
+      recheckNote: "Is scheme ka official source listed hai, lekin latest eligibility aur amount details recheck karni chahiye."
     }
   };
 

@@ -156,6 +156,15 @@
     return languageLabels.low;
   }
 
+  function verificationLabel(scheme) {
+    const languageLabels = labels[state.language] || labels.en;
+    return scheme.verificationStatus === "verified" ? languageLabels.verified : languageLabels.recheck;
+  }
+
+  function verificationClass(scheme) {
+    return scheme.verificationStatus === "verified" ? "verified" : "recheck";
+  }
+
   function renderRecommendations() {
     if (!state.recommendations.length) {
       recommendationsEl.innerHTML = '<div class="empty">Fill the profile and find schemes to see recommendations.</div>';
@@ -172,6 +181,7 @@
               <h3>${scheme.name}</h3>
               <span class="badge">${statusLabel(status)}</span>
             </div>
+            <p class="verification ${verificationClass(scheme)}">${verificationLabel(scheme)}</p>
             <p>${summary}</p>
             <ul>${reasons.slice(0, 3).map((reason) => `<li>${reason}</li>`).join("")}</ul>
             <a class="source-link" href="${scheme.sourceUrls[0]}" target="_blank" rel="noreferrer">Source: ${scheme.sourceUrls[0]}</a>

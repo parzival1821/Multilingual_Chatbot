@@ -279,7 +279,10 @@
     }
 
     if (top.verificationStatus !== "verified") {
-      parts.push("This scheme entry uses an official source but should be rechecked for latest details.");
+      parts.push(
+        labels.recheckNote ||
+          "This scheme entry uses an official source, but latest eligibility and amount details should be rechecked."
+      );
     }
 
     parts.push(labels.disclaimer || "Please verify final eligibility on the official portal before applying.");

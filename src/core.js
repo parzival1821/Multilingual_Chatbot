@@ -307,6 +307,18 @@
     return `${scheme.name} document checklist\n\n${documents}\n\nSource: ${scheme.sourceUrls[0]}`;
   }
 
+  function getKnowledgeStats(schemes) {
+    const verified = schemes.filter((scheme) => scheme.verificationStatus === "verified").length;
+    const sourceCount = schemes.reduce((count, scheme) => count + scheme.sourceUrls.length, 0);
+    return {
+      schemes: schemes.length,
+      languages: 2,
+      verified,
+      recheckNeeded: schemes.length - verified,
+      sourceCount
+    };
+  }
+
   function createProfileFromEntries(entries) {
     const profile = {};
     for (const [key, value] of entries) {
@@ -330,6 +342,7 @@
     answerQuestion,
     getChecklist,
     formatChecklist,
+    getKnowledgeStats,
     createProfileFromEntries
   };
 });

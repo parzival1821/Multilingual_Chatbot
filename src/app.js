@@ -47,6 +47,10 @@
       checklistReady: "Checklist ready for",
       copied: "Checklist copied.",
       copyFailed: "Copy failed. Select and copy the list manually.",
+      metricsSchemes: "schemes",
+      metricsLanguages: "languages",
+      metricsVerified: "verified sources",
+      metricsCitations: "source links",
       areaRural: "Rural",
       areaUrban: "Urban",
       farmer: "Farmer",
@@ -99,6 +103,10 @@
       checklistReady: "Checklist ready hai",
       copied: "Checklist copied.",
       copyFailed: "Copy failed. List ko manually select karke copy karein.",
+      metricsSchemes: "schemes",
+      metricsLanguages: "languages",
+      metricsVerified: "verified sources",
+      metricsCitations: "source links",
       areaRural: "Rural",
       areaUrban: "Urban",
       farmer: "Kisan",
@@ -173,6 +181,7 @@
   const chatAnswer = document.querySelector("#chatAnswer");
   const copyStatus = document.querySelector("#copyStatus");
   const downloadChecklist = document.querySelector("#downloadChecklist");
+  const metricsEl = document.querySelector("#metrics");
 
   function setLanguage(language) {
     state.language = language;
@@ -188,8 +197,22 @@
     document.querySelectorAll("[data-i18n-option]").forEach((node) => {
       node.textContent = copy[language][node.dataset.i18nOption] || node.textContent;
     });
+    renderMetrics();
     renderRecommendations();
     renderChecklist();
+  }
+
+  function renderMetrics() {
+    const stats = core.getKnowledgeStats(schemes);
+    const metrics = [
+      [stats.schemes, uiText("metricsSchemes")],
+      [stats.languages, uiText("metricsLanguages")],
+      [stats.verified, uiText("metricsVerified")],
+      [stats.sourceCount, uiText("metricsCitations")]
+    ];
+    metricsEl.innerHTML = metrics
+      .map(([value, label]) => `<span class="metric"><strong>${value}</strong> ${label}</span>`)
+      .join("");
   }
 
   function profileFromForm() {

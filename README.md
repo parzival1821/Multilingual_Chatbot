@@ -15,6 +15,7 @@
 - English and Hindi mode.
 - Guided eligibility questionnaire.
 - Sample personas for quick demos.
+- Knowledge-base metrics for scheme count, languages, verified sources, and citations.
 - Personalized scheme recommendations with reasons.
 - Grounded chatbot answers with source links.
 - Document checklist generator.
@@ -91,6 +92,7 @@ npm run check
 - Added one-click recommendation-to-checklist actions for a cleaner demo flow.
 - Added static smoke checks plus a README demo script and manual QA checklist.
 - Added downloadable `.txt` checklists for selected schemes.
+- Added a knowledge-base metrics strip for demo-ready trust/scope signals.
 
 ## Next Build Tasks
 

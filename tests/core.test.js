@@ -94,6 +94,15 @@ assert.match(pmuyChecklistText, /Pradhan Mantri Ujjwala Yojana document checklis
 assert.match(pmuyChecklistText, /- KYC application form/);
 assert.match(pmuyChecklistText, /Source: https:\/\/www\.pmuy\.gov\.in\//);
 
+const stats = core.getKnowledgeStats(schemes);
+assert.deepEqual(stats, {
+  schemes: 8,
+  languages: 2,
+  verified: 5,
+  recheckNeeded: 3,
+  sourceCount: 13
+});
+
 const unknown = core.answerQuestion("Can I get a drone subsidy for my startup?", farmer, schemes, "en", labels);
 assert.equal(unknown.type, "fallback");
 

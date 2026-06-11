@@ -6,6 +6,7 @@ const root = path.join(__dirname, "..");
 const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
 
 assert.match(indexHtml, /<h1>Sahayak<\/h1>/, "Home page should identify the product");
+assert.match(indexHtml, /id="metrics"/, "Home page should include knowledge base metrics");
 assert.match(indexHtml, /id="profileForm"/, "Home page should include the eligibility form");
 assert.match(indexHtml, /id="recommendations"/, "Home page should include recommendations");
 assert.match(indexHtml, /id="chatForm"/, "Home page should include the chat form");

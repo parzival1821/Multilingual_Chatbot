@@ -82,6 +82,27 @@ h2 {
   line-height: 1.6;
 }
 
+.metric-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.metric {
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #334155;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.metric strong {
+  color: var(--blue);
+}
+
 .language-toggle,
 .sample-row,
 .prompt-row {

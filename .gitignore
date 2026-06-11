@@ -1,0 +1,12 @@
+# Local planning/research docs. Keep these out of commits.
+details.md
+plan.md
+schemes.md
+
+# Runtime and generated files.
+node_modules/
+coverage/
+dist/
+build/
+.DS_Store
+npm-debug.log*

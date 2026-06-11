@@ -1,0 +1,11 @@
+{
+  "name": "sahayak-welfare-chatbot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multilingual RAG-style welfare scheme discovery assistant for the NSS AI project.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "test": "node tests/core.test.js",
+    "check": "npm test"
+  }
+}

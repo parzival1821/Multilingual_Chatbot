@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sahayak | Welfare Scheme Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="Project overview">
+        <div>
+          <p class="eyebrow">NSS AI Project</p>
+          <h1>Sahayak</h1>
+          <p class="subtitle">A bilingual welfare scheme discovery assistant with grounded answers and source-backed recommendations.</p>
+        </div>
+        <div class="language-toggle" aria-label="Language selector">
+          <button class="segmented active" data-language="en" type="button">English</button>
+          <button class="segmented" data-language="hi" type="button">Hindi</button>
+        </div>
+      </section>
+
+      <section class="layout">
+        <form class="panel questionnaire" id="profileForm">
+          <div class="section-heading">
+            <p class="eyebrow">Step 1</p>
+            <h2 data-i18n="profileTitle">Eligibility Profile</h2>
+          </div>
+
+          <div class="sample-row" aria-label="Sample personas">
+            <button type="button" class="sample" data-persona="farmer">Farmer</button>
+            <button type="button" class="sample" data-persona="woman">Woman HoH</button>
+            <button type="button" class="sample" data-persona="vendor">Street Vendor</button>
+          </div>
+
+          <label>
+            <span data-i18n="area">Area</span>
+            <select name="area">
+              <option value="rural">Rural</option>
+              <option value="urban">Urban</option>
+            </select>
+          </label>
+
+          <label>
+            <span data-i18n="occupation">Occupation</span>
+            <select name="occupation">
+              <option value="farmer">Farmer</option>
+              <option value="street_vendor">Street vendor</option>
+              <option value="informal_worker">Informal worker</option>
+              <option value="construction_worker">Construction worker</option>
+              <option value="domestic_worker">Domestic worker</option>
+              <option value="student">Student</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+
+          <div class="grid-2">
+            <label>
+              <span data-i18n="gender">Gender</span>
+              <select name="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              <span data-i18n="age">Age Group</span>
+              <select name="ageGroup">
+                <option value="18_40">18-40</option>
+                <option value="40_59">40-59</option>
+                <option value="60_79">60-79</option>
+                <option value="80_plus">80+</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span data-i18n="income">Income Category</span>
+            <select name="incomeGroup">
+              <option value="bpl">BPL / very low income</option>
+              <option value="ews">EWS</option>
+              <option value="lig">LIG</option>
+              <option value="mig">MIG</option>
+              <option value="other">Other / unknown</option>
+            </select>
+          </label>
+
+          <div class="grid-2">
+            <label>
+              <span data-i18n="ownsLand">Cultivable land?</span>
+              <select name="ownsLand">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+
+            <label>
+              <span data-i18n="pucca">Pucca house?</span>
+              <select name="hasPuccaHouse">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="grid-2">
+            <label>
+              <span data-i18n="lpg">LPG connection?</span>
+              <select name="hasLpg">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </label>
+
+            <label>
+              <span data-i18n="bank">Bank account?</span>
+              <select name="hasBank">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend data-i18n="special">Special category</legend>
+            <label class="checkbox"><input type="checkbox" name="specialCategories" value="widowed" /> Widow</label>
+            <label class="checkbox"><input type="checkbox" name="specialCategories" value="disabled" /> Person with disability</label>
+            <label class="checkbox"><input type="checkbox" name="specialCategories" value="girl_child_parent" /> Parent/guardian of girl child</label>
+          </fieldset>
+
+          <button class="primary" type="submit" data-i18n="findSchemes">Find Schemes</button>
+        </form>
+
+        <section class="panel results-panel" aria-live="polite">
+          <div class="section-heading">
+            <p class="eyebrow">Step 2</p>
+            <h2 data-i18n="recommendations">Recommendations</h2>
+          </div>
+          <div id="recommendations" class="recommendations"></div>
+        </section>
+      </section>
+
+      <section class="layout bottom-layout">
+        <section class="panel chat-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Step 3</p>
+            <h2 data-i18n="askTitle">Ask a Follow-Up</h2>
+          </div>
+          <div class="prompt-row">
+            <button type="button" class="prompt">What documents do I need for Ayushman Bharat?</button>
+            <button type="button" class="prompt">Am I eligible for PM-KISAN?</button>
+            <button type="button" class="prompt">Mujhe ghar ke liye kaunsi yojana mil sakti hai?</button>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" data-i18n-placeholder="askPlaceholder" placeholder="Ask about eligibility, benefits, or documents" />
+            <button class="primary" type="submit" data-i18n="ask">Ask</button>
+          </form>
+          <div id="chatAnswer" class="answer-box"></div>
+        </section>
+
+        <section class="panel checklist-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Step 4</p>
+            <h2 data-i18n="checklistTitle">Document Checklist</h2>
+          </div>
+          <label>
+            <span data-i18n="chooseScheme">Choose scheme</span>
+            <select id="checklistSelect"></select>
+          </label>
+          <ul id="checklist" class="checklist"></ul>
+          <button id="copyChecklist" class="secondary" type="button" data-i18n="copyChecklist">Copy checklist</button>
+          <p id="copyStatus" class="copy-status" role="status"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="src/data.js"></script>
+    <script src="src/core.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>

@@ -141,9 +141,10 @@ The `submission/` folder contains Google-Docs-ready Markdown files for the offic
 - [Solution Framework](submission/02-solution-framework.md)
 - [Prototype and Implementation Plan](submission/03-prototype-implementation-plan.md)
 - [Impact Projection](submission/04-impact-projection.md)
-- [Pilot Test Report Template](submission/05-pilot-test-report-template.md)
+- [Pilot Test Report and Internal Validation](submission/05-pilot-test-report.md)
 - [Final Presentation Outline](submission/06-final-presentation-outline.md)
 - [Submission Portal Details](submission/07-submission-portal-details.md)
+- [Visual Diagrams Appendix](submission/08-visual-diagrams.md)
 
 ## Run Locally
 

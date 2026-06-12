@@ -46,10 +46,11 @@ https://parzival1821.github.io/Multilingual_Chatbot/
 | Solution Framework | Yes | `submission/02-solution-framework.md` |
 | Prototype / Implementation Plan | Yes | `submission/03-prototype-implementation-plan.md` |
 | Functional prototype | Yes | Live GitHub Pages link |
-| User-flow diagram | Yes | README and solution framework |
-| Pilot test report format | Yes | `submission/05-pilot-test-report-template.md` |
+| User-flow diagram | Yes | README and `submission/08-visual-diagrams.md` |
+| Pilot test report / internal validation | Yes | `submission/05-pilot-test-report.md` |
 | 2-page impact projection | Yes | `submission/04-impact-projection.md` |
 | Final presentation outline | Yes | `submission/06-final-presentation-outline.md` |
+| Visual diagrams appendix | Yes | `submission/08-visual-diagrams.md` |
 
 ## Deadline
 
@@ -59,9 +60,8 @@ Official deadline: **13 June 2026, 6:00 PM IST**.
 
 - Open live demo and confirm it loads.
 - Run `npm run check`.
-- Verify README diagrams render on GitHub.
+- Verify README and visual appendix diagrams render on GitHub.
 - Confirm submission folder appears on GitHub.
 - Confirm no private/personal notes are committed.
 - Submit the GitHub repository URL in the portal.
 - If submitting as a team, every team member should submit individually with the same link.
-

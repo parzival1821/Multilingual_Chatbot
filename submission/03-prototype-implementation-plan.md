@@ -49,9 +49,10 @@ The current prototype is a deployed static web app. It demonstrates the end-to-e
     ├── 02-solution-framework.md
     ├── 03-prototype-implementation-plan.md
     ├── 04-impact-projection.md
-    ├── 05-pilot-test-report-template.md
+    ├── 05-pilot-test-report.md
     ├── 06-final-presentation-outline.md
-    └── 07-submission-portal-details.md
+    ├── 07-submission-portal-details.md
+    └── 08-visual-diagrams.md
 ```
 
 ## Key Files
@@ -154,9 +155,9 @@ Automated checks currently cover:
 ### Immediate Submission Version
 
 - Keep the current 8-scheme web MVP.
-- Use README diagrams for architecture and user flow.
+- Use README and visual appendix diagrams for architecture and user flow.
 - Submit GitHub repo and live demo link.
-- Add pilot observations if time permits.
+- Use the internal validation report, then add real-user observations if time permits.
 
 ### Next Version
 
@@ -169,4 +170,3 @@ Automated checks currently cover:
 ## Conclusion
 
 The current prototype is ready as a functional MVP. It demonstrates the core end-to-end solution loop and is simple enough to deploy, test, and explain during evaluation.
-

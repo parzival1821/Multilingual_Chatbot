@@ -12,9 +12,10 @@ These files are written in Markdown so they render cleanly on GitHub and can be 
 | [02-solution-framework.md](02-solution-framework.md) | Architecture, process flow, tech stack, safety, scalability, and risk mitigation |
 | [03-prototype-implementation-plan.md](03-prototype-implementation-plan.md) | Current MVP, feature map, deployment, testing, and implementation roadmap |
 | [04-impact-projection.md](04-impact-projection.md) | Quantified impact model, assumptions, scenarios, and sustainability pathway |
-| [05-pilot-test-report-template.md](05-pilot-test-report-template.md) | Ready-to-fill pilot test protocol and report format for 10-15 users |
+| [05-pilot-test-report.md](05-pilot-test-report.md) | Internal validation report with scripted personas, test results, and real-user pilot appendix |
 | [06-final-presentation-outline.md](06-final-presentation-outline.md) | 8-slide pitch deck outline with speaker notes |
 | [07-submission-portal-details.md](07-submission-portal-details.md) | Exact portal fields, links, and final submission checklist |
+| [08-visual-diagrams.md](08-visual-diagrams.md) | Architecture, user journey, persona mapping, grounded answer, and handoff diagrams |
 
 ## Submission Links
 
@@ -31,11 +32,10 @@ These files are written in Markdown so they render cleanly on GitHub and can be 
 | Prototype / Implementation Plan | `03-prototype-implementation-plan.md` + live app |
 | Final Presentation | `06-final-presentation-outline.md` |
 | Functional chatbot prototype | Live demo + source code |
-| User-flow diagram covering 3 personas | README Mermaid diagrams + `02-solution-framework.md` |
-| Pilot test report | `05-pilot-test-report-template.md` |
+| User-flow diagram covering 3 personas | README Mermaid diagrams + `08-visual-diagrams.md` |
+| Pilot test report | `05-pilot-test-report.md` |
 | 2-page impact projection | `04-impact-projection.md` |
 
 ## Deadline
 
 Official submission deadline: **13 June 2026, 6:00 PM IST**.
-

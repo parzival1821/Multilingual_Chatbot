@@ -5,6 +5,7 @@ const path = require("node:path");
 const root = path.join(__dirname, "..");
 const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const appJs = fs.readFileSync(path.join(root, "src", "app.js"), "utf8");
+const dataJs = fs.readFileSync(path.join(root, "src", "data.js"), "utf8");
 const pagesWorkflow = fs.readFileSync(path.join(root, ".github", "workflows", "pages.yml"), "utf8");
 
 assert.match(indexHtml, /<h1>Sahayak<\/h1>/, "Home page should identify the product");
@@ -25,7 +26,11 @@ assert.match(indexHtml, /Permanent house\?/, "English form should avoid unexplai
 assert.doesNotMatch(indexHtml, />Step \d</, "Dashboard should not present as a rough numbered flow");
 assert.match(appJs, /पात्रता प्रोफ़ाइल/, "Hindi mode should use Devanagari UI copy");
 assert.match(appJs, /आयुष्मान भारत के लिए कौन से दस्तावेज चाहिए/, "Hindi prompt examples should use Devanagari");
+assert.match(appJs, /एलपीजी कनेक्शन/, "Hindi LPG label should use Devanagari");
 assert.doesNotMatch(appJs, /Beneficiary ki|Poochhein|Schemes dhoondhein/, "Hindi copy should not be Hinglish");
+assert.match(dataJs, /hindiName: "पीएम-किसान सम्मान निधि"/, "Schemes should expose Devanagari display names");
+assert.match(dataJs, /hindiName: "प्रधानमंत्री उज्ज्वला योजना"/, "Ujjwala should have a Devanagari display name");
+assert.match(dataJs, /एलपीजी कनेक्शन/, "Hindi scheme copy should use Devanagari LPG");
 assert.match(appJs, /View documents/, "Recommendation action should clearly describe the document action");
 assert.match(appJs, /scrollIntoView/, "Recommendation action should bring the checklist panel into view");
 assert.doesNotMatch(appJs, /setToolPanel/, "Assistant and checklist panels should not need tab switching");

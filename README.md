@@ -105,6 +105,7 @@ The repo includes a GitHub Pages workflow at `.github/workflows/pages.yml`. Afte
 - Fixed recommendation document actions so they open, scroll to, and highlight the checklist panel.
 - Split the assistant and document checklist into side-by-side dashboard panels.
 - Converted Hindi mode from Hinglish to Devanagari copy, summaries, and follow-up prompts.
+- Added Devanagari scheme names and Hindi एलपीजी labels for the Hindi experience.
 
 ## Next Build Tasks
 

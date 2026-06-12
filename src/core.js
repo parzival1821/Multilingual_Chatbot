@@ -236,6 +236,7 @@
   function schemeSearchText(scheme) {
     return [
       scheme.name,
+      scheme.hindiName,
       scheme.summary,
       scheme.hindiSummary,
       scheme.targetBeneficiary,
@@ -257,6 +258,8 @@
       "disabled",
       "disability",
       "divyang",
+      "पीएम-किसान",
+      "पीएम-जय",
       "किसान",
       "आयुष्मान",
       "उज्ज्वला",
@@ -322,6 +325,8 @@
       "disabled",
       "disability",
       "divyang",
+      "पीएम-किसान",
+      "पीएम-जय",
       "किसान",
       "आयुष्मान",
       "उज्ज्वला",

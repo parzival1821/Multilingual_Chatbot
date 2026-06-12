@@ -9,6 +9,7 @@
     {
       id: "pm-kisan",
       name: "PM-KISAN Samman Nidhi",
+      hindiName: "पीएम-किसान सम्मान निधि",
       category: ["agriculture", "income_support"],
       verificationStatus: "verified",
       summary:
@@ -36,6 +37,7 @@
     {
       id: "pmjay",
       name: "Ayushman Bharat PM-JAY",
+      hindiName: "आयुष्मान भारत पीएम-जय",
       category: ["health", "insurance"],
       verificationStatus: "verified",
       summary:
@@ -64,12 +66,13 @@
     {
       id: "pmuy",
       name: "Pradhan Mantri Ujjwala Yojana",
+      hindiName: "प्रधानमंत्री उज्ज्वला योजना",
       category: ["clean_fuel", "women"],
       verificationStatus: "verified",
       summary:
         "LPG connection support for eligible adult women from poor households without an LPG connection.",
       hindiSummary:
-        "गरीब परिवार की 18 वर्ष या उससे अधिक आयु की महिला को LPG कनेक्शन मिल सकता है, अगर घर में पहले से LPG कनेक्शन नहीं है.",
+        "गरीब परिवार की 18 वर्ष या उससे अधिक आयु की महिला को एलपीजी कनेक्शन मिल सकता है, अगर घर में पहले से एलपीजी कनेक्शन नहीं है.",
       targetBeneficiary: "Adult women from poor households without an existing household LPG connection.",
       benefits: [
         "Deposit-free LPG connection",
@@ -99,6 +102,7 @@
     {
       id: "pmay-u",
       name: "Pradhan Mantri Awas Yojana - Urban 2.0",
+      hindiName: "प्रधानमंत्री आवास योजना - शहरी 2.0",
       category: ["housing", "urban"],
       verificationStatus: "verified",
       summary:
@@ -128,6 +132,7 @@
     {
       id: "nsap",
       name: "National Social Assistance Programme",
+      hindiName: "राष्ट्रीय सामाजिक सहायता कार्यक्रम",
       category: ["pension", "social_assistance"],
       verificationStatus: "verified",
       summary:
@@ -158,6 +163,7 @@
     {
       id: "pmsvanidhi",
       name: "PM Street Vendor's AtmaNirbhar Nidhi",
+      hindiName: "पीएम स्ट्रीट वेंडर आत्मनिर्भर निधि",
       category: ["livelihood", "credit"],
       verificationStatus: "official_source_recheck_needed",
       summary:
@@ -180,6 +186,7 @@
     {
       id: "apy",
       name: "Atal Pension Yojana",
+      hindiName: "अटल पेंशन योजना",
       category: ["pension", "financial_inclusion"],
       verificationStatus: "official_source_recheck_needed",
       summary:
@@ -203,6 +210,7 @@
     {
       id: "ssa",
       name: "Sukanya Samriddhi Account",
+      hindiName: "सुकन्या समृद्धि खाता",
       category: ["savings", "girl_child"],
       verificationStatus: "official_source_recheck_needed",
       summary:
@@ -268,7 +276,7 @@
         "The occupation is one of the vulnerable urban/informal worker categories.": "रोजगार शहरी/असंगठित कमजोर कामगार श्रेणी में आता है.",
         "Disability can be an important vulnerability signal.": "दिव्यांगता एक महत्वपूर्ण संवेदनशीलता संकेत हो सकती है.",
         "The applicant is an adult woman.": "आवेदक वयस्क महिला है.",
-        "The household does not already have an LPG connection.": "परिवार के पास पहले से LPG कनेक्शन नहीं है.",
+        "The household does not already have an LPG connection.": "परिवार के पास पहले से एलपीजी कनेक्शन नहीं है.",
         "The household is in an urban area.": "परिवार शहरी क्षेत्र में है.",
         "The household does not already have a permanent house.": "परिवार के पास पहले से स्थायी घर नहीं है.",
         "The income category fits the EWS/LIG/MIG style targeting.": "आय वर्ग EWS/LIG/MIG लक्षित श्रेणी से मेल खाता है.",
@@ -328,9 +336,9 @@
         "Cashless treatment at empanelled hospitals": "सूचीबद्ध अस्पतालों में कैशलेस इलाज",
         "No cap on family size, age, or gender": "परिवार आकार, आयु या लिंग पर सीमा नहीं",
         "Pre-existing diseases covered from day one": "पहले से मौजूद बीमारियां पहले दिन से कवर",
-        "Deposit-free LPG connection": "बिना जमा राशि LPG कनेक्शन",
+        "Deposit-free LPG connection": "बिना जमा राशि एलपीजी कनेक्शन",
         "Cash assistance for new connection": "नए कनेक्शन के लिए नकद सहायता",
-        "First LPG refill and stove/hotplate support by Oil Marketing Companies": "पहली LPG रिफिल और चूल्हा/हॉटप्लेट सहायता",
+        "First LPG refill and stove/hotplate support by Oil Marketing Companies": "पहली एलपीजी रिफिल और चूल्हा/हॉटप्लेट सहायता",
         "Support through Beneficiary Led Construction": "लाभार्थी-नेतृत्व निर्माण के तहत सहायता",
         "Affordable Housing in Partnership": "साझेदारी में किफायती आवास",
         "Affordable Rental Housing": "किफायती किराये का आवास",

@@ -47,6 +47,7 @@ const vendor = {
 
 assert.equal(schemes.length, 8, "MVP should include 8 schemes");
 assert.ok(schemes.every((scheme) => scheme.sourceUrls.length > 0), "Every scheme needs at least one source");
+assert.ok(schemes.every((scheme) => /[\u0900-\u097F]/u.test(scheme.hindiName)), "Every scheme needs a Devanagari display name");
 
 const farmerIds = ids(core.recommendSchemes(farmer, schemes));
 assert.equal(farmerIds[0], "pm-kisan", "Farmer with land should rank PM-KISAN first");
@@ -73,6 +74,11 @@ assert.equal(hindiDocsAnswer.scheme.id, "pmjay");
 assert.match(hindiDocsAnswer.text, /तैयार रखने वाले दस्तावेज/);
 assert.match(hindiDocsAnswer.text, /आधिकारिक पोर्टल/);
 assert.match(hindiDocsAnswer.text, /आधार या पहचान दस्तावेज/);
+
+const hindiKisanAnswer = core.answerQuestion("क्या मैं पीएम-किसान के लिए पात्र हूं?", farmer, schemes, "hi", labels);
+assert.equal(hindiKisanAnswer.type, "answer");
+assert.equal(hindiKisanAnswer.scheme.id, "pm-kisan");
+assert.match(hindiKisanAnswer.text, /कारण/);
 
 const hindiWidowQuestion = "मैं 55 वर्ष की विधवा हूं, मेरे लिए कौन सी योजना बेहतर है?";
 const hindiWidowMatches = core.retrieveSchemes(hindiWidowQuestion, schemes, 3);

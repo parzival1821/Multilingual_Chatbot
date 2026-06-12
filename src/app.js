@@ -98,7 +98,7 @@
       income: "आय वर्ग",
       ownsLand: "खेती योग्य जमीन?",
       permanentHouse: "स्थायी घर?",
-      lpg: "LPG कनेक्शन?",
+      lpg: "एलपीजी कनेक्शन?",
       bank: "बैंक खाता?",
       special: "विशेष श्रेणी",
       widow: "विधवा",
@@ -114,7 +114,7 @@
       askTitle: "सहायक से पूछें",
       askHelp: "स्रोत-आधारित फॉलो-अप जवाब.",
       promptAyushman: "आयुष्मान भारत के लिए कौन से दस्तावेज चाहिए?",
-      promptKisan: "क्या मैं PM-KISAN के लिए पात्र हूं?",
+      promptKisan: "क्या मैं पीएम-किसान के लिए पात्र हूं?",
       promptWidow: "मैं 55 वर्ष की विधवा हूं, मेरे लिए कौन सी योजना बेहतर है?",
       askPlaceholder: "पात्रता, लाभ या दस्तावेजों के बारे में पूछें",
       ask: "पूछें",
@@ -226,6 +226,7 @@
     });
     renderMetrics();
     renderRecommendations();
+    renderChecklistOptions();
     renderChecklist();
   }
 
@@ -299,6 +300,10 @@
     return documentMap[documentName] || documentName;
   }
 
+  function schemeDisplayName(scheme) {
+    return state.language === "hi" && scheme.hindiName ? scheme.hindiName : scheme.name;
+  }
+
   function renderRecommendations() {
     if (!state.recommendations.length) {
       recommendationsEl.innerHTML = `<div class="empty">${uiText("emptyRecommendations")}</div>`;
@@ -312,7 +317,7 @@
         return `
           <article class="scheme-card ${statusClass}">
             <div class="scheme-title">
-              <h3>${scheme.name}</h3>
+              <h3>${schemeDisplayName(scheme)}</h3>
               <span class="badge">${statusLabel(status)}</span>
             </div>
             <p class="verification ${verificationClass(scheme)}">${verificationLabel(scheme)}</p>
@@ -330,7 +335,13 @@
 
   function renderChecklistOptions() {
     const source = state.recommendations.length ? state.recommendations.map((item) => item.scheme) : schemes;
-    checklistSelect.innerHTML = source.map((scheme) => `<option value="${scheme.id}">${scheme.name}</option>`).join("");
+    const selectedValue = checklistSelect.value;
+    checklistSelect.innerHTML = source
+      .map((scheme) => `<option value="${scheme.id}">${schemeDisplayName(scheme)}</option>`)
+      .join("");
+    if (source.some((scheme) => scheme.id === selectedValue)) {
+      checklistSelect.value = selectedValue;
+    }
   }
 
   function renderChecklist() {
@@ -343,7 +354,7 @@
     checklistSelect.value = schemeId;
     renderChecklist();
     const selected = schemes.find((scheme) => scheme.id === schemeId);
-    copyStatus.textContent = selected ? `${uiText("checklistReady")} ${selected.name}.` : "";
+    copyStatus.textContent = selected ? `${uiText("checklistReady")} ${schemeDisplayName(selected)}.` : "";
 
     if (options.reveal) {
       checklistPanel.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -355,7 +366,10 @@
   function selectedChecklistText() {
     const selected = schemes.find((scheme) => scheme.id === checklistSelect.value);
     if (!selected) return "";
-    const title = state.language === "hi" ? `${selected.name} दस्तावेज चेकलिस्ट` : `${selected.name} document checklist`;
+    const title =
+      state.language === "hi"
+        ? `${schemeDisplayName(selected)} दस्तावेज चेकलिस्ट`
+        : `${schemeDisplayName(selected)} document checklist`;
     const documents = selected.documents.map((documentName) => `- ${localizedDocument(documentName)}`).join("\n");
     return `${title}\n\n${documents}\n\n${uiText("sourceLabel")}: ${selected.sourceUrls[0]}`;
   }
@@ -373,7 +387,7 @@
       return;
     }
     chatAnswer.innerHTML = `
-      <h3>${answer.scheme.name}</h3>
+      <h3>${schemeDisplayName(answer.scheme)}</h3>
       <p>${answer.text}</p>
       ${answer.citations.map((url) => `<a class="source-link" href="${url}" target="_blank" rel="noreferrer">${uiText("sourceLabel")}: ${url}</a>`).join("<br />")}
     `;

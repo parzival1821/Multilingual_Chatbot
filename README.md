@@ -180,22 +180,6 @@ npm run check
 - `npm run check` passes.
 - `details.md`, `plan.md`, and `schemes.md` remain local-only and uncommitted.
 
-## Current Limitations
-
-- The current MVP is a web prototype, not a WhatsApp/SMS/IVR bot yet.
-- It supports English and Hindi; a strict interpretation of the official brief may require adding a second regional language beyond Hindi.
-- The knowledge base is curated manually from official sources instead of scraped automatically from MyScheme.gov.in.
-- No real 10-15 user pilot report has been added yet.
-- Impact projection and final pitch deck are still separate submission deliverables.
-
-## Next Submission Tasks
-
-- Add screenshots or a short demo video.
-- Prepare a user-flow diagram export for the final deck if Mermaid rendering is not accepted.
-- Write the problem analysis report, solution framework, and 2-page impact projection.
-- Add pilot-test notes if even a small informal user test can be completed before submission.
-- Add one more regional language if time allows.
-
 ## Project Positioning
 
 Sahayak is intentionally built as a practical AI product rather than a custom ML research model. Its strength is the combination of structured eligibility logic, retrieval-grounded answers, bilingual UX, source-backed recommendations, and a low-bandwidth document handoff that can later be extended to WhatsApp, SMS, or IVR.

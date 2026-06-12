@@ -119,9 +119,9 @@ If a field worker saves even 10 minutes per beneficiary screened, then:
 | Maintenance | Volunteer/developer time |
 | Field usage | Any phone/browser |
 
-### Future WhatsApp/SMS Cost
+### WhatsApp/SMS Cost Consideration
 
-Costs would depend on message volume and provider pricing. The current architecture keeps the core logic text-based, so the same recommendation and retrieval engine can later be exposed through a WhatsApp/SMS backend.
+Costs would depend on message volume and provider pricing. The current architecture keeps the core logic text-based, so the same recommendation and retrieval engine is compatible with a WhatsApp/SMS backend.
 
 ## Sustainability Pathway
 
@@ -145,4 +145,3 @@ Costs would depend on message volume and provider pricing. The current architect
 ## Conclusion
 
 Sahayak's impact comes from increasing successful navigation of existing welfare schemes. Even modest improvements in awareness and document readiness can translate into meaningful entitlement access, especially when the tool is used by NSS volunteers or NGOs across repeated community outreach sessions.
-

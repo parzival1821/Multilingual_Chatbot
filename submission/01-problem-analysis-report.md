@@ -124,7 +124,7 @@ Users need a system that can:
 - Generate copyable/downloadable document checklists.
 - Use a low-bandwidth static web implementation for MVP.
 - Add a fallback for unsupported questions.
-- Structure the code so additional schemes and languages can be added later.
+- Structure the code so additional schemes and languages can be added without redesigning the app.
 
 ## Success Criteria
 
@@ -141,4 +141,3 @@ Users need a system that can:
 ## Conclusion
 
 Sahayak reframes welfare awareness as a last-mile product problem. The core insight is that beneficiaries do not need a database dump; they need a short, trusted, language-aware decision flow. A focused, grounded, low-bandwidth assistant can help users move from uncertainty to action by identifying relevant schemes and preparing the documents needed to apply.
-

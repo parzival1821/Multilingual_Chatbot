@@ -142,10 +142,10 @@ The `submission/` folder contains Google-Docs-ready Markdown files for the offic
 - [Solution Framework](submission/02-solution-framework.md)
 - [Prototype and Implementation Plan](submission/03-prototype-implementation-plan.md)
 - [Impact Projection](submission/04-impact-projection.md)
-- [Pilot Test Report and Internal Validation](submission/05-pilot-test-report.md)
-- [Final Presentation Outline](submission/06-final-presentation-outline.md)
+- [Pilot Test Report](submission/05-pilot-test-report.md)
+- [Final Presentation Content](submission/06-final-presentation.md)
 - [Submission Portal Details](submission/07-submission-portal-details.md)
-- [Visual Diagrams Appendix](submission/08-visual-diagrams.md)
+- [Visual Diagrams](submission/08-visual-diagrams.md)
 
 ## Run Locally
 
@@ -192,8 +192,7 @@ npm run check
 - Checklist copy and download actions produce a scheme-specific document list.
 - Unsupported questions produce a safe fallback instead of invented scheme details.
 - `npm run check` passes.
-- `details.md`, `plan.md`, and `schemes.md` remain local-only and uncommitted.
 
 ## Project Positioning
 
-Sahayak is intentionally built as a practical AI product rather than a custom ML research model. Its strength is the combination of structured eligibility logic, retrieval-grounded answers, bilingual UX, source-backed recommendations, and a low-bandwidth document handoff that can later be extended to WhatsApp, SMS, or IVR.
+Sahayak is intentionally built as a practical AI product rather than a custom ML research model. Its strength is the combination of structured eligibility logic, retrieval-grounded answers, bilingual UX, source-backed recommendations, and a low-bandwidth document handoff compatible with WhatsApp, SMS, or IVR channels.

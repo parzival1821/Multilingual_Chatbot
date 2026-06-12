@@ -1,7 +1,7 @@
-# Final Presentation Outline
+# Final Presentation Content
 
 Project: **Sahayak - Welfare Scheme Discovery Assistant**  
-Recommended length: **6-8 slides**
+Format: **8-slide presentation with speaker notes**
 
 ## Slide 1: Title
 
@@ -11,12 +11,11 @@ Subtitle:
 
 Low-bandwidth, source-backed scheme awareness for rural and low-income beneficiaries.
 
-Include:
+Slide content:
 
-- Team/member names.
 - NSS Open Projects 2026.
 - Track 1.1: AI-Based Multilingual Chatbot for Welfare Scheme Awareness.
-- Live demo link and QR code if possible.
+- Live demo: `https://parzival1821.github.io/Multilingual_Chatbot/`
 
 Speaker note:
 
@@ -28,7 +27,7 @@ Main message:
 
 India has many welfare schemes, but eligible users often do not discover or complete applications.
 
-Use 3 pain points:
+Core pain points:
 
 - Information is fragmented across portals and PDFs.
 - Eligibility language is hard to understand.
@@ -40,17 +39,13 @@ The problem is not lack of welfare design; it is last-mile access, language, tru
 
 ## Slide 3: Target Users
 
-Show 3 personas:
+Personas:
 
 1. Farmer.
 2. Woman-led household.
 3. Street vendor / informal worker.
 
-For each:
-
-- Need.
-- Relevant schemes.
-- Product value.
+Each persona is represented in the product through eligibility signals, relevant scheme matches, and document checklist support.
 
 Speaker note:
 
@@ -58,7 +53,7 @@ The product is designed around common beneficiary contexts rather than scheme na
 
 ## Slide 4: Solution
 
-Show the user journey:
+User journey:
 
 ```mermaid
 flowchart LR
@@ -96,7 +91,7 @@ Highlight trust markers: official source links, verification labels, and safe fa
 
 ## Slide 6: Technical Architecture
 
-Show:
+Architecture components:
 
 - Static dashboard.
 - Scheme knowledge base.
@@ -111,7 +106,7 @@ The MVP uses retrieval-grounded generation rather than an unconstrained chatbot,
 
 ## Slide 7: Impact Projection
 
-Use conservative model:
+Conservative impact model:
 
 - 10,000 outreach population.
 - 4,000 likely eligible for at least one scheme.
@@ -128,25 +123,25 @@ Speaker note:
 
 Even small improvements in welfare uptake can translate into meaningful entitlement access.
 
-## Slide 8: Roadmap and Ask
+## Slide 8: Submission Readiness and Ask
 
-Roadmap:
+Submission readiness:
 
-- Add more regional languages.
-- Add WhatsApp/SMS/IVR interface.
-- Expand scheme catalogue.
-- Pilot with NSS/NGO field workers.
-- Build update workflow for official scheme changes.
+- Functional prototype deployed on GitHub Pages.
+- Source-backed 8-scheme knowledge base.
+- English and Hindi Devanagari support.
+- Document checklist handoff.
+- Automated core and smoke tests.
 
 Ask:
 
 - Mentor feedback.
-- Pilot access through NSS/NGO community.
-- Support for WhatsApp/SMS deployment.
+- NSS/NGO access for field demonstration.
+- Guidance on scaling to more local schemes and channels.
 
 Speaker note:
 
-The prototype is ready for validation and extension into real last-mile channels.
+The prototype is ready for evaluation and field demonstration.
 
 ## Backup Slide: Evaluation Fit
 
@@ -157,4 +152,3 @@ The prototype is ready for validation and extension into real last-mile channels
 | Feasibility | Static low-cost MVP deployed on GitHub Pages |
 | Impact potential | Quantified entitlement and time-saving model |
 | Communication | Live demo, diagrams, and source-backed documentation |
-

@@ -12,7 +12,7 @@ function CodeBlock(block)
     return pandoc.Para({
       pandoc.Strong({ pandoc.Str("Diagram:") }),
       pandoc.Space(),
-      pandoc.Str("Rendered in the Visual Diagrams Appendix PDF.")
+      pandoc.Str("Rendered in the Visual Diagrams PDF.")
     })
   end
   return nil

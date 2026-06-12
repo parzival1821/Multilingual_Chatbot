@@ -50,7 +50,7 @@ The current prototype is a deployed static web app. It demonstrates the end-to-e
     ├── 03-prototype-implementation-plan.md
     ├── 04-impact-projection.md
     ├── 05-pilot-test-report.md
-    ├── 06-final-presentation-outline.md
+    ├── 06-final-presentation.md
     ├── 07-submission-portal-details.md
     └── 08-visual-diagrams.md
 ```
@@ -149,23 +149,6 @@ Automated checks currently cover:
 - Safe fallback for unsupported queries.
 - Static asset references.
 - GitHub Pages workflow shape.
-
-## Implementation Roadmap
-
-### Immediate Submission Version
-
-- Keep the current 8-scheme web MVP.
-- Use README and visual appendix diagrams for architecture and user flow.
-- Submit GitHub repo and live demo link.
-- Use the internal validation report, then add real-user observations if time permits.
-
-### Next Version
-
-- Add one more regional language beyond Hindi.
-- Add WhatsApp/SMS interface through Twilio or WhatsApp Business API.
-- Add admin tool for updating scheme data.
-- Expand scheme coverage using official scheme catalogues.
-- Add analytics for NGO/NSS outreach camps.
 
 ## Conclusion
 

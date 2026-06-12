@@ -1,8 +1,8 @@
-# Visual Diagrams Appendix
+# Visual Diagrams
 
 Project: **Sahayak - Welfare Scheme Discovery Assistant**
 
-This appendix contains diagram-ready visuals for the README, report, and final presentation. The diagrams are written in Mermaid so they render on GitHub and can be recreated in Google Docs or slides if needed.
+This document contains the architecture, user journey, persona mapping, grounded answer, handoff, and deliverable diagrams for the final submission.
 
 ## System Architecture
 
@@ -110,9 +110,9 @@ flowchart LR
   Docs --> Framework["Solution framework"]
   Docs --> Plan["Implementation plan"]
   Docs --> Impact["Impact projection"]
-  Docs --> Pilot["Internal validation report"]
-  Docs --> Deck["Presentation outline"]
-  Docs --> Diagrams["Visual diagrams appendix"]
+  Docs --> Pilot["Pilot test report"]
+  Docs --> Deck["Final presentation content"]
+  Docs --> Diagrams["Visual diagrams"]
 
   Demo --> Submit["NSS submission link"]
   Tests --> Submit

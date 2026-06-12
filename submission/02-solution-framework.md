@@ -155,17 +155,17 @@ The MVP supports:
 - No heavy media dependencies.
 - Copyable and downloadable `.txt` checklists.
 - Works as a single-page app hosted on GitHub Pages.
-- Future-ready for WhatsApp/SMS/IVR because the logic is text-based.
+- Compatible with WhatsApp/SMS/IVR channels because the logic is text-based.
 
-## Scalability Path
+## Scale Readiness
 
-| Phase | Extension |
+| Area | Readiness |
 | --- | --- |
-| MVP | Static web prototype with 8 schemes |
-| Phase 2 | Add more regional languages and more schemes |
-| Phase 3 | Replace local retrieval with indexed official scheme data |
-| Phase 4 | Add WhatsApp/SMS interface through Twilio or WhatsApp Business API |
-| Phase 5 | Add field-worker dashboard and analytics for outreach camps |
+| Web deployment | Static GitHub Pages prototype with 8 schemes |
+| Language expansion | Copy maps and data fields support additional languages |
+| Scheme expansion | Data model separates scheme content from UI logic |
+| Messaging channels | Text-first engine can be connected to WhatsApp/SMS gateways |
+| Field operations | Checklist output supports volunteers during outreach camps |
 
 ## Risks and Mitigations
 
@@ -187,7 +187,7 @@ For MVP deployment:
 - Maintenance: periodic scheme updates from official portals.
 - Field deployment: NSS volunteers or NGO field workers can use it during awareness drives.
 
-For future WhatsApp deployment:
+For WhatsApp/SMS deployment:
 
 - Twilio/WhatsApp Business API costs depend on message volume.
 - A district or NGO deployment can start with a small curated scheme catalogue and expand.
@@ -196,4 +196,3 @@ For future WhatsApp deployment:
 ## Conclusion
 
 Sahayak is feasible because it avoids unnecessary complexity. It demonstrates the core AI product value: grounded personalization, multilingual access, and actionable document preparation. Its architecture is simple enough for a student team to build and maintain, while still extensible toward real last-mile channels.
-

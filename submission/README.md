@@ -23,6 +23,11 @@ These files are written in Markdown so they render cleanly on GitHub and can be 
 - GitHub repository: `https://github.com/parzival1821/Multilingual_Chatbot`
 - Problem statement: **Track 1 - AI & Intelligent Solutions, Challenge 1.1 - AI-Based Multilingual Chatbot for Welfare Scheme Awareness**
 
+## PDF Exports
+
+- Combined PDF packet: [`pdf/sahayak-submission-pack.pdf`](pdf/sahayak-submission-pack.pdf)
+- Individual PDF exports are available in [`pdf/`](pdf/).
+
 ## Official Deliverable Coverage
 
 | Official deliverable | Repo artifact |

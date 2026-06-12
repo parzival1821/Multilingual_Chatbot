@@ -137,6 +137,7 @@ flowchart LR
 
 The `submission/` folder contains Google-Docs-ready Markdown files for the official NSS deliverables:
 
+- [Combined PDF Submission Packet](submission/pdf/sahayak-submission-pack.pdf)
 - [Problem Analysis Report](submission/01-problem-analysis-report.md)
 - [Solution Framework](submission/02-solution-framework.md)
 - [Prototype and Implementation Plan](submission/03-prototype-implementation-plan.md)

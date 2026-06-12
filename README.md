@@ -133,6 +133,18 @@ flowchart LR
 - `tests/core.test.js` validates recommendation ranking, retrieval, fallback behavior, Hindi queries, and checklist logic.
 - `tests/static-smoke.test.js` validates the static shell, deployed asset references, Hindi Devanagari copy, and Pages workflow shape.
 
+## Submission Documents
+
+The `submission/` folder contains Google-Docs-ready Markdown files for the official NSS deliverables:
+
+- [Problem Analysis Report](submission/01-problem-analysis-report.md)
+- [Solution Framework](submission/02-solution-framework.md)
+- [Prototype and Implementation Plan](submission/03-prototype-implementation-plan.md)
+- [Impact Projection](submission/04-impact-projection.md)
+- [Pilot Test Report Template](submission/05-pilot-test-report-template.md)
+- [Final Presentation Outline](submission/06-final-presentation-outline.md)
+- [Submission Portal Details](submission/07-submission-portal-details.md)
+
 ## Run Locally
 
 ```bash

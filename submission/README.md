@@ -2,7 +2,7 @@
 
 This folder contains Google-Docs-ready submission material for **Sahayak**, prepared for **NSS Open Projects 2026 - Track 1.1: AI-Based Multilingual Chatbot for Welfare Scheme Awareness**.
 
-These files are written in Markdown so they render cleanly on GitHub and can be copied into Google Docs for final formatting.
+These files are written in Markdown for clean GitHub rendering, with final PDF exports available in the `pdf/` folder.
 
 ## Document Index
 

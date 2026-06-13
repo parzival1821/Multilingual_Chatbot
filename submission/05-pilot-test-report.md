@@ -25,6 +25,7 @@ Evaluate whether Sahayak can help a user:
 | Tester type | Prototype validation |
 | Prototype | Static GitHub Pages web app |
 | Live URL | `https://parzival1821.github.io/Multilingual_Chatbot/` |
+| Demo video | `https://vimeo.com/1200973459?share=copy&fl=sv&fe=ci` |
 | Repository | `https://github.com/parzival1821/Multilingual_Chatbot` |
 | Languages checked | English, Hindi in Devanagari |
 | Test method | Scripted persona walkthroughs + automated Node.js checks |

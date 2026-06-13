@@ -16,6 +16,7 @@ Slide content:
 - NSS Open Projects 2026.
 - Track 1.1: AI-Based Multilingual Chatbot for Welfare Scheme Awareness.
 - Live demo: `https://parzival1821.github.io/Multilingual_Chatbot/`
+- Demo video: `https://vimeo.com/1200973459?share=copy&fl=sv&fe=ci`
 
 Speaker note:
 
@@ -151,4 +152,4 @@ The prototype is ready for evaluation and field demonstration.
 | Innovation | Grounded welfare assistant with checklist handoff |
 | Feasibility | Static low-cost MVP deployed on GitHub Pages |
 | Impact potential | Quantified entitlement and time-saving model |
-| Communication | Live demo, diagrams, and source-backed documentation |
+| Communication | Live demo, demo video, diagrams, and source-backed documentation |

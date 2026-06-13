@@ -20,6 +20,7 @@ These files are written in Markdown so they render cleanly on GitHub and can be 
 ## Submission Links
 
 - Live demo: `https://parzival1821.github.io/Multilingual_Chatbot/`
+- Demo video: `https://vimeo.com/1200973459?share=copy&fl=sv&fe=ci`
 - GitHub repository: `https://github.com/parzival1821/Multilingual_Chatbot`
 - Problem statement: **Track 1 - AI & Intelligent Solutions, Challenge 1.1 - AI-Based Multilingual Chatbot for Welfare Scheme Awareness**
 
@@ -36,7 +37,7 @@ These files are written in Markdown so they render cleanly on GitHub and can be 
 | Solution Framework | `02-solution-framework.md` |
 | Prototype / Implementation Plan | `03-prototype-implementation-plan.md` + live app |
 | Final Presentation | `06-final-presentation.md` |
-| Functional chatbot prototype | Live demo + source code |
+| Functional chatbot prototype | Live demo + demo video + source code |
 | User-flow diagram covering 3 personas | README Mermaid diagrams + `08-visual-diagrams.md` |
 | Pilot test report | `05-pilot-test-report.md` |
 | 2-page impact projection | `04-impact-projection.md` |

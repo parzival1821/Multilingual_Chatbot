@@ -6,6 +6,8 @@ The prototype helps a user fill a short eligibility profile, discover relevant w
 
 Live demo: `https://parzival1821.github.io/Multilingual_Chatbot/`
 
+Demo video: `https://vimeo.com/1200973459?share=copy&fl=sv&fe=ci`
+
 ## Project Snapshot
 
 - **Status:** Functional MVP deployed on GitHub Pages.

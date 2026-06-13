@@ -4,6 +4,7 @@ Project: **Sahayak - Welfare Scheme Discovery Assistant**
 Track: **Track 1 - AI & Intelligent Solutions**  
 Challenge: **1.1 - AI-Based Multilingual Chatbot for Welfare Scheme Awareness**  
 Live demo: `https://parzival1821.github.io/Multilingual_Chatbot/`
+Demo video: `https://vimeo.com/1200973459?share=copy&fl=sv&fe=ci`
 
 ## Executive Summary
 
